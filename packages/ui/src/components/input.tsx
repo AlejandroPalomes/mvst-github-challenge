@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import { type FC } from 'react';
 // import styled from '@emotion/styled';
 // import { useFormContext } from 'react-hook-form';
 // import { InputBase } from './components/InputBase';

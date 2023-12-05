@@ -1,32 +1,33 @@
-// import { MutationStatus, QueryKey, RefetchOptions, useQuery, UseQueryOptions } from 'react-query';
-// import { isAClientError, isUnauthorizedError } from '../../lib/network/helpers';
 import axios from 'axios';
-
-// const MAX_RETRY = 3;
+import { Config } from '../../lib/Config.ts';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 // const GTIHUB_BASE_URL = 'https://api.github.com/graphql';
 
 export type Fetcher<T> = () => Promise<T>;
 
-// export type UseGetOptions = UseQueryOptions;
+// export interface UseGetOptions {};
 
-export interface UseAPIResult<T> {
+export interface UseGetResult<T> {
   data?: T;
-  // isLoading: boolean;
-  // error: any;
-  // isError: boolean;
-  // refetch: (options?: RefetchOptions) => Promise<any>;
-  // status: MutationStatus;
+  isLoading: boolean;
+  error: any;
+  refetch: () => void;
 }
 
 interface TempGithubResponse {}
 
-// export const useGet = <T extends any>(uniqueKey: QueryKey, fetcher: Fetcher<T>, options?: UseGetOptions): UseAPIResult<T> => {
-export const useGet = <T extends TempGithubResponse>(): UseAPIResult<T> => {
+// export const useGet = <T extends any>(uniqueKey: QueryKey, fetcher: Fetcher<T>, options?: UseGetOptions): UseGetResult<T> => {
+export const useGet = <T extends TempGithubResponse>(): UseGetResult<T> => {
+
+  const [data, setData] = useState();
+  const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   //TODO Move this to a file named API > API.users.find, and both variables need to be params from that
   const username = 'AlejandroPalomes';
-  const partialString = 'mvst'
+  const partialString = 're'
   const query = `
 {
   search(query: "user:${username} ${partialString}", type: REPOSITORY, first: 5) {
@@ -46,66 +47,54 @@ export const useGet = <T extends TempGithubResponse>(): UseAPIResult<T> => {
 }
 `;
 
-let data;
-  axios.post('https://api.github.com/graphql', {
-    query: query
-  }, {
-    headers: {
-      // Authorization: `Bearer ${token}`,
-    },
-  })
-    .then(response => {
-      const repositories = response.data.data.search.edges.map((edge: any) => edge.node); //TODO Remove any type
-      data = repositories;
-      console.log(repositories);
+  useEffect(() => {
+    const getUserRepositories = async () => {
+      axios.post('https://api.github.com/graphql', {
+        query: query
+      }, {
+        headers: {
+          Authorization: `Bearer ${Config.GITHUB_API_KEY}`, //TODO Fix process.env, not working with turborepo, but the useGet hook works if this is replaces with a valid token \,,/
+        },
+      })
+        .then(response => {
+          const repositories = response.data.data.search.edges.map((edge: any) => edge.node); //TODO Remove any type
+          setData(repositories);
+          console.log(repositories, response);
+        })
+        .catch(error => {
+          console.error('Error:', error.response ? error.response.data : error.message);
+          setError(error.response ? error.response.data : error.message);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
+    };
+
+    getUserRepositories();
+  }, [username, partialString, query]);
+
+  const refetch = () => {
+    //TODO Fix this repeated code, move call inside a callback????
+    axios.post('https://api.github.com/graphql', {
+      query: query
+    }, {
+      headers: {
+        Authorization: `Bearer ${Config.GITHUB_API_KEY}`, //TODO Fix process.env, not working with turborepo, but the useGet hook works if this is replaces with a valid token \,,/
+      },
     })
-    .catch(error => {
-      console.error('Error:', error.response ? error.response.data : error.message);
-    });
+      .then(response => {
+        const repositories = response.data.data.search.edges.map((edge: any) => edge.node); //TODO Remove any type
+        setData(repositories);
+        console.log(repositories, response);
+      })
+      .catch(error => {
+        console.error('Error:', error.response ? error.response.data : error.message);
+        setError(error.response ? error.response.data : error.message);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }
 
-  // const { isLoading, error, isError, data, refetch, status } = useQuery<T>(uniqueKey, fetcher, {
-  //   notifyOnChangeProps: ['data', 'error'],
-  //   retry: (failureCount: number, error) => {
-  //     if (error && isAClientError(error)) {
-  //       return false;
-  //     }
-
-  //     if (error && isUnauthorizedError(error)) {
-  //       return false;
-  //     }
-
-  //     return failureCount < MAX_RETRY;
-  //   },
-  //   ...options as any
-  // });
-
-  // query PostsForAuthor {
-  //   author(id: 1) {
-  //     firstName
-  //     posts {
-  //       title
-  //       votes
-  //     }
-  //   }
-  // }
-
-
-
-  // const { logout } = useAuth();
-
-  // if (error) {
-  //   if (isUnauthorizedError(error)) {
-  //     console.log('Error force logout!!');
-  //     logout().catch(console.error);
-  //   }
-  // }
-
-  return {
-    data
-    // isLoading,
-    // error,
-    // refetch,
-    // isError,
-    // status
-  };
+  return { data, isLoading, error, refetch };
 };
