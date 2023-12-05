@@ -26,7 +26,7 @@ export const Input: FC<InputProps> = (props) => {
   const {
     name,
     // label,
-    // onChange,
+    onChange,
     // onBlur,
     // onFocus,
     // showErrors = true,
@@ -38,9 +38,9 @@ export const Input: FC<InputProps> = (props) => {
   // const inputError = errors[name];
   // const registerRef = Boolean(ref) ? { ref } : register(name);
 
-  // const handleOnChange = (event) => {
-  //   onChange?.(event.currentTarget.value);
-  // };
+  const handleOnChange = (event: any) => {
+    onChange?.(event.target?.value as string);
+  };
 
   // const handleOnFocus = (event) =>
   //   onFocus?.(event.currentTarget.value);
@@ -52,6 +52,7 @@ export const Input: FC<InputProps> = (props) => {
   return (
     <input
       name={name}
+      onChange={handleOnChange}
       type="input"
     />
     // <Container>
