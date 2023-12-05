@@ -1,13 +1,16 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalDotEnv": [".env"],
+  "globalDependencies": [".env"],
   "pipeline": {
     "build": {
+      "dotEnv": [".env"],
       "outputs": ["dist/**", "storybook-static/**"],
       "dependsOn": ["^build"]
     },
     "lint": {},
     "dev": {
+      "dotEnv": [".env"],
       "cache": false,
       "persistent": true
     },
