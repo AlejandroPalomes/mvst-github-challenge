@@ -1,3 +1,3 @@
 export const Config = {
-  GITHUB_API_KEY: 'TODO - fix env variables usage'//process.env.GITHUB_API_KEY as string,
+  GITHUB_API_KEY: import.meta.env.VITE_GITHUB_TOKEN as string,
 };
