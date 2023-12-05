@@ -3,6 +3,10 @@ import { FC, useEffect, useState } from 'react';
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 import { useGet } from '../hooks/api/useGet.tsx';
+import { API } from '../lib/API.ts';
+import { User } from '../models/User.ts';
+import { useRouter } from '../hooks/router/useRouter.tsx';
+import { Public } from '../router/routes/Public.ts';
 
 // const temporal_demo_query = {
 //   user(login:"AlejandroPalomes") {
@@ -25,48 +29,31 @@ import { useGet } from '../hooks/api/useGet.tsx';
 // }
 // }
 
-/** Query to return users given a partial string of the name
-{
-  search(query: "AlejandroPal type:user", type: USER, first: 5) {
-    edges {
-      node {
-        ... on User {
-          login
-          name
-        }
-      }
-    }
-  }
-}
- */
-
-/** Query to search repositories given a specific user an a partial string of the repo name
- {
-  search(query: "user:AlejandroPalomes re", type: REPOSITORY, first: 5) {
-    edges {
-      node {
-        ... on Repository {
-          name
-          owner {
-            login
-          }
-          description
-          createdAt
-        }
-      }
-    }
-  }
-}
- */
+// {
+//   user(login: "AlejandroPalomesfff") {
+//     login
+//     name
+//     bio
+//     repositories(first: 5, orderBy: { field: UPDATED_AT, direction: DESC }) {
+//       nodes {
+//         name
+//         description
+//         createdAt
+//       }
+//     }
+//   }
+// }
 
 const HomePage: FC = () => {
   const [count, setCount] = useState(0)
-
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const [typingTimeout, setTypingTimeout] = useState<any>(null);
 
-  const { data } = useGet();
+  const { data, error, isLoading } = useGet<User[]>(API.users.findByUsername, searchQuery);
 
-  console.log({data});
+  const { navigate } = useRouter();
+
+  console.log({ data, error, isLoading });
 
   useEffect(() => {
     return () => typingTimeout && clearTimeout(typingTimeout);
@@ -74,14 +61,14 @@ const HomePage: FC = () => {
 
   const startTimeout = (value: string) => {
     return setTimeout(() => {
-      console.log('set value: ', value);
       setTypingTimeout(null);
+      setSearchQuery(value)
     }, 500);
   };
 
-  const inputHandler = ({ target }: any) => {
+  const inputHandler = (value: string) => {
     typingTimeout && clearTimeout(typingTimeout);
-    setTypingTimeout(startTimeout(target.value));
+    setTypingTimeout(startTimeout(value));
   };
 
   return (
@@ -97,10 +84,10 @@ const HomePage: FC = () => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Input name="testing"/>
+        <Input name="testing" onChange={inputHandler}/>
       </div>
       <div className="card">
-        <input type="text" onChange={inputHandler}/>
+        {data?.map(user => <button onClick={() => navigate(Public.USER.to(user.login))}>{user.login}</button>)}
       </div>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
