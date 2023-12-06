@@ -1,12 +1,11 @@
-import { Button, Input } from '@mvst-ui';
+import { Input } from '@mvst-ui';
 import { FC, useEffect, useState } from 'react';
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
-import { useGet } from '../hooks/api/useGet.tsx';
-import { API } from '../lib/API.ts';
-import { User } from '../models/User.ts';
-import { useRouter } from '../hooks/router/useRouter.tsx';
-import { Public } from '../router/routes/Public.ts';
+import { useGet } from '../../hooks/api/useGet.tsx';
+import { API } from '../../lib/API.ts';
+import { User } from '../../models/User.ts';
+import { useRouter } from '../../hooks/router/useRouter.tsx';
+import { Public } from '../../router/routes/Public.ts';
+import { UserCard } from './components/UserCard.tsx';
 
 const HomePage: FC = () => {
   const { navigate } = useRouter();
@@ -38,24 +37,16 @@ const HomePage: FC = () => {
 
   return (
     <>
-      <Button>Look at this button \,,/</Button>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
+      <h1>GitHub user search</h1>
       <div className="card">
         <Input name="testing" onChange={inputHandler}/>
       </div>
+      {data?.map(user => <UserCard user={user}/>)}
       <div className="card">
         {data?.map(user => <button onClick={() => navigate(Public.USER.to(user.login))}>{user.login}</button>)}
       </div>
       <div className="card">
-        <p>
+        <p className="text-red-600">
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
       </div>

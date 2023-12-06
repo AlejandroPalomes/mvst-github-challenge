@@ -77,7 +77,7 @@ const UserPage: FC = () => {
     <>
       <Button onClick={() => goBack()}>Go back</Button>
       <div>
-        <Avatar src={user.avatarUrl}/>
+        <Avatar src={user.avatarUrl} size="l"/>
       </div>
       <h1>{user.name}</h1>
       <p className="read-the-docs">
