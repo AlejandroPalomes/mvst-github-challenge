@@ -4,13 +4,8 @@ export interface LocationState {
   canGoBack?: boolean;
 }
 
-export interface NavigationOptions {
-  replace?: boolean;
-  canGoBack?: boolean;
-}
-
 interface UseRouterResult {
-  navigate: (to: string, options?: NavigationOptions) => void;
+  navigate: (to: string) => void;
   goBack: (defaultGoBackRoute?: string) => void;
   pathname: string;
   search: string;
@@ -18,16 +13,10 @@ interface UseRouterResult {
 
 export const useRouter = (): UseRouterResult => {
   const baseNavigate = useNavigate();
-  const { state, pathname, search } = useLocation();
+  const { pathname, search } = useLocation();
 
-  const navigate = (to: string, options: NavigationOptions = {}) => {
-    const { replace, canGoBack } = options;
-    baseNavigate(to, {
-      ...(replace && { replace: true }),
-      state: {
-        canGoBack: (canGoBack || (state as LocationState)?.canGoBack),
-      }
-    });
+  const navigate = (to: string) => {
+    baseNavigate(to);
   };
 
   const goBack = (defaultGoBackRoute?: string) => {

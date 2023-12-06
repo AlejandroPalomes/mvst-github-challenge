@@ -3,5 +3,6 @@
     {
       "mode": "auto"
     }
-  ]
+  ],
+  "css.customData": [".vscode/css-data.json"]
 }

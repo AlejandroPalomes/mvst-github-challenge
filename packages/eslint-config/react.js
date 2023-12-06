@@ -36,6 +36,8 @@ module.exports = {
   rules: {
     "import/no-default-export": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }]
   },
 };
