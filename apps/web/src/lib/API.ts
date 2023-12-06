@@ -1,49 +1,25 @@
+import { Repository } from "../models/Repository.ts";
 import { User } from "../models/User.ts";
+import { UserLanguage } from "../models/UserLanguage.ts";
+import { RepositoryQueries } from "./api/queries/RepositoryQueries.ts";
 import { UserQueries } from "./api/queries/UserQueries.ts";
-import { doGet, githubSearchResponseParser } from "./helpers.ts";
+import { doGet, githubGetResponseParser, githubSearchResponseParser } from "./helpers.ts";
 
 export const API = {
   repositories: {
-   find: (username: string, query: string) => `
-{
-  search(query: "user:${username} ${query}", type: REPOSITORY, first: 5) {
-    edges {
-      node {
-        ... on Repository {
-          name
-          owner {
-            login
-          }
-          description
-          createdAt
-        }
-      }
-    }
-  }
-}`
-  },
+    findBy: (variables: { username: string, partialName: string, language?: string }) => () =>
+      doGet<Repository>(
+        RepositoryQueries.findBy.query,
+        githubSearchResponseParser,
+        { query: RepositoryQueries.findBy.parseVariables(variables) }
+      ),
+    findAllLanguages: (variables: { username: string }) => () =>
+      doGet<UserLanguage>(RepositoryQueries.findAllLanguages.query, githubGetResponseParser('user'), variables)
+    },
   users: {
-    find: (username: string) => `
-{
-  search(query: "${username} type:user", type: USER, first: 5) {
-    edges {
-      node {
-        ... on User {
-          login
-          name
-          avatarUrl
-          bio
-          location
-          company
-          repositories {
-            totalCount
-          }
-        }
-      }
+    findByUsername: (variables: { username: string }) => () =>
+      doGet<User>(UserQueries.findByName(), githubSearchResponseParser, { query: `${variables.username} type:user`}),
+    getInfoById: (variables: { username: string }) => () =>
+      doGet<User>(UserQueries.getInfoById(), githubGetResponseParser('user'), variables)
     }
-  }
-}`,
-  findByUsername: (param: string = '') =>
-    doGet<User>(UserQueries.findByName(param), githubSearchResponseParser)
-  },
 };

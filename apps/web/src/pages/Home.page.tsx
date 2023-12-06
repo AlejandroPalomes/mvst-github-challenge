@@ -8,50 +8,14 @@ import { User } from '../models/User.ts';
 import { useRouter } from '../hooks/router/useRouter.tsx';
 import { Public } from '../router/routes/Public.ts';
 
-// const temporal_demo_query = {
-//   user(login:"AlejandroPalomes") {
-//   repositories(first: 3, orderBy: {field: CREATED_AT, direction: DESC}) {
-//     edges {
-//       node {
-//         name,
-//         owner {
-//           login,
-//           avatarUrl,
-//           id
-//         },
-//         forks {
-//           totalCount
-//         },
-//         createdAt
-//       }
-//     }
-//   }
-// }
-// }
-
-// {
-//   user(login: "AlejandroPalomesfff") {
-//     login
-//     name
-//     bio
-//     repositories(first: 5, orderBy: { field: UPDATED_AT, direction: DESC }) {
-//       nodes {
-//         name
-//         description
-//         createdAt
-//       }
-//     }
-//   }
-// }
-
 const HomePage: FC = () => {
-  const [count, setCount] = useState(0)
+  const { navigate } = useRouter();
+
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [typingTimeout, setTypingTimeout] = useState<any>(null);
 
-  const { data, error, isLoading } = useGet<User[]>(API.users.findByUsername, searchQuery);
+  const { data, error, isLoading, refetch } = useGet<User[]>(API.users.findByUsername({ username: searchQuery }));
 
-  const { navigate } = useRouter();
 
   console.log({ data, error, isLoading });
 
@@ -62,7 +26,8 @@ const HomePage: FC = () => {
   const startTimeout = (value: string) => {
     return setTimeout(() => {
       setTypingTimeout(null);
-      setSearchQuery(value)
+      setSearchQuery(value);
+      refetch();
     }, 500);
   };
 
@@ -90,9 +55,6 @@ const HomePage: FC = () => {
         {data?.map(user => <button onClick={() => navigate(Public.USER.to(user.login))}>{user.login}</button>)}
       </div>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>

@@ -9,26 +9,28 @@ export interface UseGetResult<T> {
   refetch: () => void;
 }
 
-type FetcherType<T> = (param?: string) => Promise<T>
+type FetcherType<T> = () => Promise<T>
 
 interface TempGithubResponse {}
 
-export const useGet = <T extends TempGithubResponse>(fetcher: FetcherType<T>, params: string): UseGetResult<T> => {
+export const useGet = <T extends TempGithubResponse>(fetcher: FetcherType<T>): UseGetResult<T> => {
 
   const [data, setData] = useState<T | undefined>();
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
   const doAPICall = useCallback(async (): Promise<void> => {
-    try {
-      const response = await fetcher(params);
-      setData(response);
-    } catch (error: any) {
-      setError(error);
-    } finally {
-      setLoading(false);
+    if (isLoading) {
+      try {
+        const response = await fetcher();
+        setData(response);
+      } catch (error: any) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
     }
-  }, [fetcher, params])
+  }, [fetcher, isLoading])
 
   useEffect(() => {
     doAPICall();
