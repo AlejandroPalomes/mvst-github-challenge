@@ -7,3 +7,4 @@ export { FolderIcon } from './components/folder-icon';
 export { GithubIcon } from './components/github-icon';
 export { Input, type InputProps } from './components/input';
 export { LocationIcon } from './components/location-icon';
+export { CaretIcon } from './components/caret-icon';

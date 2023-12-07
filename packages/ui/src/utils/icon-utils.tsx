@@ -1,7 +1,7 @@
 export const IconSizes = [16, 20, 24, 32, 40, 60];
 export type IconSize = typeof IconSizes[number];
 
-export const getStrokeWidth = (size: IconSize) => {
+export const getStrokeWidth = (size: IconSize): number => {
   switch (size) {
     case 16:
       return 2;
