@@ -1,4 +1,4 @@
-import { DropdownSearcher } from '@mvst-ui';
+import { Dropdown } from '@mvst-ui';
 import { useState, type FC, useEffect } from 'react';
 import { useGet } from '../hooks/api/useGet.tsx';
 import { User } from '../models/User.ts';
@@ -41,13 +41,13 @@ export const UserSearcher: FC<UserSearcherProps> = () => {
 	}
 
 	return (
-		<DropdownSearcher onChange={inputHandler} placeholder="Search user...">
+		<Dropdown variant="searcher" onChange={inputHandler} placeholder="Search user...">
 			{searchQuery.length ? data?.length
 				?	data.map(user =>
-					<DropdownSearcher.Item onSelect={handleOnClickCard(user.login)}>{user.login}</DropdownSearcher.Item>
+					<Dropdown.Item key={user.login} onSelect={handleOnClickCard(user.login)}>{user.login}</Dropdown.Item>
 					)
-				: <DropdownSearcher.Item>No users found</DropdownSearcher.Item> : null
+				: <Dropdown.Item>No users found</Dropdown.Item> : null
 			}
-		</DropdownSearcher>
+		</Dropdown>
 	);
 };

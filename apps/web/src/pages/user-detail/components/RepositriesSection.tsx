@@ -1,8 +1,7 @@
 import { API } from '../../../lib/API.ts';
 import React, { FC, useEffect, useState } from 'react';
-import { Input } from '@mvst-ui';
+import { Dropdown, Input } from '@mvst-ui';
 import { RepositoriesSectionContent } from './RepositoriesSectionContent.tsx';
-import { Repository } from '../../../models/Repository.ts';
 import { useGet } from '../../../hooks/api/useGet.tsx';
 import { UserLanguage } from '../../../models/UserLanguage.ts';
 
@@ -29,12 +28,13 @@ interface RepostioriesSectionProps {
 }
 
 export const RepostioriesSection: FC<RepostioriesSectionProps> = ({ userId }): React.ReactNode => {
+  const [shouldClearData, setShouldClearData] = useState<string>(userId);
   const [language, setLanguage] = useState<string>();
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [shouldRefetchOnUserIdChange, setShouldRefetchOnUserIdChange] = useState<string>(userId);
   const [typingTimeout, setTypingTimeout] = useState<any>(null);
 
-  const { data: repositories, refetch, isLoading } = useGet<Repository[]>(API.repositories.findBy({ username: userId!, partialName: searchQuery, language }));
+  const { Item } = Dropdown;
+
   const { data: languages } = useGet<UserLanguage>(API.repositories.findAllLanguages({ username: userId! }));
 
   const formattedLanguages = parseLanguage(languages);
@@ -44,17 +44,17 @@ export const RepostioriesSection: FC<RepostioriesSectionProps> = ({ userId }): R
   });
 
   useEffect(() => {
-    if (shouldRefetchOnUserIdChange !== userId) {
-      refetch();
-      setShouldRefetchOnUserIdChange(userId);
-    }
-  }, [refetch, userId, shouldRefetchOnUserIdChange]);
+    if(shouldClearData !== userId) {
+      setSearchQuery('');
+      setLanguage(undefined);
+      setShouldClearData(userId);
+    } 
+  }, [userId, shouldClearData]);
 
   const startTimeout = (value: string) => {
     return setTimeout(() => {
       setTypingTimeout(null);
       setSearchQuery(value);
-      refetch();
     }, 500);
   };
 
@@ -65,25 +65,19 @@ export const RepostioriesSection: FC<RepostioriesSectionProps> = ({ userId }): R
 
   const handleOnSelectLanguage = (value: string) => {
     setLanguage(value);
-    refetch();
   };
-
-  if (isLoading) {
-    return <div>Skeleton...</div>
-  }
-
-  if (!repositories) {
-    return <div>Error loading user...</div>;
-  }
 
   return <>
     <div className="flex flex-row gap-3">
-      <Input name="testing" onChange={inputHandler}/>
-      <select onChange={({ target }) => handleOnSelectLanguage(target.value)}>
-        <option value={undefined} key="language-option-all">All</option>
-        {formattedLanguages.map(language => <option value={language} key={`language-${language}`}>{language}</option>)}
-      </select>
+      <Input name="testing" onChange={inputHandler} placeholder="Search repository..."/>
+      <div className="w-56">
+        <Dropdown onChange={handleOnSelectLanguage} placeholder='Select language' headerTitle={language || 'Select language'}>
+          <Item>All</Item>
+          {formattedLanguages.map(language =>
+            <Item key={`language-${language}`} value={language}>{language}</Item>)}
+        </Dropdown>
+      </div>
     </div>
-    <RepositoriesSectionContent repositories={repositories}/>
+    <RepositoriesSectionContent searchQuery={searchQuery} userId={userId} language={language}/>
   </>;
 };

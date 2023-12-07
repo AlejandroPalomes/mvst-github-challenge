@@ -1,9 +1,10 @@
-import React, { createContext, type FC, useContext } from 'react';
+import React, { createContext, type FC, useContext, type Dispatch, type SetStateAction } from 'react';
 
 interface DropdownContextValue {
   isOpen: boolean;
-  setIsOpen: (value: boolean) => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
   onChange?: (newValue: string) => void;
+  headerTitle?: string;
 }
 
 const DropdownContext = createContext<DropdownContextValue | null>(null);
@@ -12,14 +13,16 @@ interface DropdownContextProps {
   children: React.ReactNode;
   isOpen: boolean;
   onChange?: (newValue: string) => void;
-  setIsOpen: (value: boolean) => void;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
+  headerTitle?: string;
 }
 
-export const DropdownContextProvider: FC<DropdownContextProps> = ({ children, isOpen, setIsOpen, onChange }) => {
+export const DropdownContextProvider: FC<DropdownContextProps> = ({ children, isOpen, setIsOpen, onChange, headerTitle }) => {
   const context: DropdownContextValue = {
     isOpen,
     setIsOpen,
-    onChange
+    onChange,
+    headerTitle
   };
 
   return <DropdownContext.Provider value={context}>
