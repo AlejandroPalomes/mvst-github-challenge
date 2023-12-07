@@ -1,12 +1,12 @@
 export interface Repository {
   name: string;
-  primaryLanguage: RepositoryPrimaryLanguage;
+  primaryLanguage?: RepositoryPrimaryLanguage;
   owner: RepositoryOwner;
-  description: string;
+  description?: string;
   createdAt: string;
 }
 
-interface RepositoryPrimaryLanguage {
+export interface RepositoryPrimaryLanguage {
   id: string;
   name: string;
 }
