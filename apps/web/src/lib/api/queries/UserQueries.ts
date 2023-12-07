@@ -25,9 +25,21 @@ export const UserQueries = {
 			login
 			name
 			avatarUrl
+    	email
+    	websiteUrl
 			bio
+	    status {
+        message
+        emoji
+      }
 			location
 			company
+    	followers {
+        totalCount
+      }
+    	following {
+        totalCount
+      }
 			repositories(first: 5, orderBy: { field: UPDATED_AT, direction: DESC }) {
 				totalCount
 				nodes {
