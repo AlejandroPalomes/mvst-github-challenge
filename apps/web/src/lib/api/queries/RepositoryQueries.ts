@@ -29,7 +29,7 @@ export const RepositoryQueries = {
 			query GetUserRepositories($username: String!) {
 				user(login: $username) {
 					name
-					repositories(first: 100) {
+					repositories(first: 50) {
 						nodes {
 							languages(first: 10) {
 								nodes {
