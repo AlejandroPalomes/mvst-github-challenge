@@ -5,3 +5,4 @@ export { Card } from './components/card';
 export { BuildingIcon } from './components/building-icon';
 export { LocationIcon } from './components/location-icon';
 export { FolderIcon } from './components/folder-icon';
+export { GithubIcon } from './components/github-icon';
