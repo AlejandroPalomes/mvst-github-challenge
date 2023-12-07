@@ -6,7 +6,14 @@ const config: Pick<Config, "prefix" | "presets" | "content"> = {
   presets: [{
     theme: {
       extend: {
-        backgroundImage: {},
+        customGray: {
+          100: '#F9FAFC',
+          200: '#EBEEF4',
+          300: '#CED3DE',
+          400: '#989DA9',
+          500: '#5E626A',
+          600: '#28292C'
+        }
       },
     },
     plugins: [],
