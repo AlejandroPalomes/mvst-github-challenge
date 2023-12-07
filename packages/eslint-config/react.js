@@ -37,6 +37,10 @@ module.exports = {
     "import/no-default-export": "off",
     "@typescript-eslint/explicit-function-return-type": "off",
     "jsx-a11y/click-events-have-key-events": "off",
+    "no-console": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/jsx-no-leaked-render": "off",
     "jsx-a11y/no-static-element-interactions": "off",
     "react/function-component-definition": [2, { "namedComponents": "arrow-function" }]
   },

@@ -8,7 +8,7 @@ export interface InputProps {
 export const Input: FC<InputProps> = (props) => {
   const {
     name,
-    onChange,
+    onChange
   } = props;
 
   const handleOnChange = (event: any) => {
@@ -16,11 +16,13 @@ export const Input: FC<InputProps> = (props) => {
   };
 
   return (
-    <input
-      className="max-w-sm w-full rounded-md"
-      name={name}
-      onChange={handleOnChange}
-      type="input"
-    />
+    <div className="w-full relative">
+      <input
+        className="w-full rounded-md"
+        name={name}
+        onChange={handleOnChange}
+        type="input"
+      />
+    </div>
   );
 };
