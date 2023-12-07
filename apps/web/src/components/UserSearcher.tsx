@@ -42,11 +42,11 @@ export const UserSearcher: FC<UserSearcherProps> = () => {
 
 	return (
 		<DropdownSearcher onChange={inputHandler} placeholder="Search user...">
-			{data?.length
+			{searchQuery.length ? data?.length
 				?	data.map(user =>
-					<DropdownSearcher.Item onClick={handleOnClickCard(user.login)}>{user.login}</DropdownSearcher.Item>
+					<DropdownSearcher.Item onSelect={handleOnClickCard(user.login)}>{user.login}</DropdownSearcher.Item>
 					)
-				: <DropdownSearcher.Item>No users found</DropdownSearcher.Item>
+				: <DropdownSearcher.Item>No users found</DropdownSearcher.Item> : null
 			}
 		</DropdownSearcher>
 	);
