@@ -67,17 +67,22 @@ export const RepostioriesSection: FC<RepostioriesSectionProps> = ({ userId }): R
     setLanguage(value);
   };
 
-  return <>
-    <div className="flex flex-row gap-3">
-      <Input name="testing" onChange={inputHandler} placeholder="Search repository..."/>
-      <div className="w-56">
-        <Dropdown onChange={handleOnSelectLanguage} placeholder='Select language' headerTitle={language || 'Select language'}>
-          <Item>All</Item>
-          {formattedLanguages.map(language =>
-            <Item key={`language-${language}`} value={language}>{language}</Item>)}
-        </Dropdown>
+  return (
+    <div className="flex flex-col gap-10">
+      <h3 className="text-left text-2xl lg:text-4xl font-bold hidden md:block">{languages?.name}</h3>
+      <div className="flex flex-col xl:flex-row gap-3 items-end">
+        <div className="w-56 min-w-min xl:order-2">
+          <Dropdown onChange={handleOnSelectLanguage} placeholder='Select language' headerTitle={language || 'Select language'}>
+            <Item>All</Item>
+            {formattedLanguages.map(language =>
+              <Item key={`language-${language}`} value={language}>{language}</Item>)}
+          </Dropdown>
+        </div>
+        <div className="xl:order-1 w-full">
+          <Input name="testing" onChange={inputHandler} placeholder="Search repository..."/>
+        </div>
       </div>
+      <RepositoriesSectionContent searchQuery={searchQuery} userId={userId} language={language}/>
     </div>
-    <RepositoriesSectionContent searchQuery={searchQuery} userId={userId} language={language}/>
-  </>;
+  );
 };

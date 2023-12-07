@@ -5,6 +5,7 @@ import { User } from '../models/User.ts';
 import { API } from '../lib/API.ts';
 import { useRouter } from '../hooks/router/useRouter.tsx';
 import { Public } from '../router/routes/Public.ts';
+import { UserCard } from './UserCard.tsx';
 
 export interface UserSearcherProps {
 }
@@ -41,10 +42,10 @@ export const UserSearcher: FC<UserSearcherProps> = () => {
 	}
 
 	return (
-		<Dropdown variant="searcher" onChange={inputHandler} placeholder="Search user...">
+		<Dropdown variant="searcher" onChange={inputHandler} placeholder="Search user..." dropLimit={false}>
 			{searchQuery.length ? data?.length
 				?	data.map(user =>
-					<Dropdown.Item key={user.login} onSelect={handleOnClickCard(user.login)}>{user.login}</Dropdown.Item>
+					<Dropdown.Item key={user.login} onSelect={handleOnClickCard(user.login)}>{<UserCard user={user}/>}</Dropdown.Item>
 					)
 				: <Dropdown.Item>No users found</Dropdown.Item> : null
 			}

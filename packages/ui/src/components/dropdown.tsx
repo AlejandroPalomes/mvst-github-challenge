@@ -6,6 +6,8 @@ import { Input } from './input';
 import { DropdownStaticHeader } from './dropdown-static-header';
 
 const optionsContainerStyles = 'absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none';
+const optionsScrollStyles = (hasLimit: boolean): string =>
+  hasLimit ? 'h-48 overflow-y-scroll' : '';
 
 type DropdownVariants = 'searcher' | 'static';
 
@@ -22,6 +24,7 @@ const getHeader = (variant: DropdownVariants) => {
 interface DropdownCommonProps {
   onChange?: (newValue: string) => void;
   placeholder?: string;
+  dropLimit?: boolean;
   children?: React.ReactNode
 }
 
@@ -42,7 +45,7 @@ interface DropdownAtoms {
 
 type DropdownType = FC<DropdownCommonProps & DropdownDynamicProps> & DropdownAtoms;
 
-export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'static', headerTitle, children }) => {
+export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'static', headerTitle, dropLimit = true, children }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const Header = getHeader(variant);
 
@@ -62,7 +65,7 @@ export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'stati
           placeholder={placeholder}
         />
         {isOpen && children &&
-          <div className={optionsContainerStyles} tabIndex={-1}>
+          <div className={`${optionsContainerStyles} ${optionsScrollStyles(dropLimit)}`} tabIndex={-1}>
             <ul className="py-1 bg-customGray-600 rounded-md" role="none">
               {children}
             </ul>
