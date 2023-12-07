@@ -15,7 +15,7 @@ export const Card: FC<CardProps> = ({ onClick, children }) => {
 
   return (
     <div
-      className={`p-4 rounded-md bg-gray-800 ${interactiveCss}`}
+      className={`p-4 rounded-md bg-customGray-700 ${interactiveCss}`}
       onClick={handleOnClick}
     >
       {children}

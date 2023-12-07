@@ -1,4 +1,5 @@
 import React, { type FC } from 'react';
+import { useDropdownContext } from './dorpdown-context';
 
 export interface DropdownItemProps {
   children: React.ReactNode
@@ -8,20 +9,23 @@ export interface DropdownItemProps {
 export type DropdownItem = FC<DropdownItemProps>;
 
 export const Item: DropdownItem = ({ children, onSelect }) => {
+  const { onChange, setIsOpen } = useDropdownContext();
 
   const handleOnSelect = () => {
+    onChange && onChange('');
+    setIsOpen(false);
     onSelect && onSelect();
   };
 
   return (
-    <span
-      className="text-gray-700 block px-4 py-2 text-sm text-left"
+    <li
+      className="text-white block px-4 py-2 text-sm text-left bg-customGray-600 hover:bg-customGray-700 duration-100 cursor-pointer"
       id="menu-item-0"
-      onSelect={handleOnSelect}
+      onClick={handleOnSelect}
       role="menuitem"
       tabIndex={-1}
     >
       {children}
-    </span>
+    </li>
     );
 };
