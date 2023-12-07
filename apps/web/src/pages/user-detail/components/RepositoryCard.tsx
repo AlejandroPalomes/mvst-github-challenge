@@ -8,7 +8,7 @@ export interface InputProps {
 }
 
 export const RepositoryCard: FC<InputProps> = ({ repository }) => {
-	const { name, primaryLanguage, owner, description, createdAt } = repository;
+	const { name, primaryLanguage, description } = repository;
 
 	return (
 		<Card>
