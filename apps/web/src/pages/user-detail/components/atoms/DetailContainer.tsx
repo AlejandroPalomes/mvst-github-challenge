@@ -15,12 +15,12 @@ const getIcon = (type: CardType) => {
 	}
 }
 
-export interface DetailCardProps {
+export interface InputProps {
 	type: CardType;
 	content: string | number;
 }
 
-export const DetailCard: FC<DetailCardProps> = ({ type, content }) => {
+export const DetailCard: FC<InputProps> = ({ type, content }) => {
 	const Icon = getIcon(type);
 	return (
 		<div className="flex flex-row gap-1">

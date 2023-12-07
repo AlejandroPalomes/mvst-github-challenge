@@ -30,13 +30,15 @@ const HomePage: FC = () => {
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center pb-7">
       <h1>GitHub user search</h1>
-      <div className="card">
+      <div className="p-5">
         <Input name="testing" onChange={inputHandler}/>
       </div>
-      {data?.map(user => <UserCard user={user}/>)}
-    </>
+      <div className="flex flex-col gap-4 max-w-3xl">
+        {data?.map(user => <UserCard user={user}/>)}
+      </div>
+    </div>
   )
 };
 

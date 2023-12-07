@@ -7,13 +7,15 @@ interface CardProps {
 
 export const Card: FC<CardProps> = ({ onClick, children }) => {
 
+  const interactiveCss = onClick ? 'hover:scale-105 duration-200 cursor-pointer' : '';
+
   const handleOnClick = () => {
     onClick && onClick();
   }
 
   return (
     <div
-      className="p-4 hover:scale-105 duration-200 rounded-md bg-gray-800 mb-4 cursor-pointer"
+      className={`p-4 rounded-md bg-gray-800 ${interactiveCss}`}
       onClick={handleOnClick}
     >
       {children}
