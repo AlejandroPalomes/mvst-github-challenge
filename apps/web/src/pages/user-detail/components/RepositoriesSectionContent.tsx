@@ -3,6 +3,7 @@ import { Repository } from '../../../models/Repository.ts';
 import { RepositoryCard } from './RepositoryCard.tsx';
 import { useGet } from '../../../hooks/api/useGet.tsx';
 import { API } from '../../../lib/API.ts';
+import { RepositoriesSectionContentSkeleton } from './skeletons/RepositoriesSectionContent.skeleton.tsx';
 
 interface RepositoriesSectionContentProps {
   userId: string;
@@ -27,7 +28,7 @@ export const RepositoriesSectionContent: FC<RepositoriesSectionContentProps> = (
   }, [refetch, searchQuery, userId, language, refetchOnQuery, refetchOnUserId, refetchOnLanguage]);
 
   if (isLoading) {
-    return <div>Skeleton...</div>
+    return <RepositoriesSectionContentSkeleton/>
   }
 
   if (!repositories) {

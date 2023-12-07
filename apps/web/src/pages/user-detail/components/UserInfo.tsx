@@ -3,6 +3,7 @@ import { useGet } from '../../../hooks/api/useGet.tsx';
 import { API } from '../../../lib/API.ts';
 import { User } from '../../../models/User.ts';
 import { UserInfoContent } from './UserInfoContent.tsx';
+import { UserInfoContentSkeleton } from './skeletons/UserInfoContent.skeleton.tsx';
 
 interface UserInfoProps {
   userId: string;
@@ -20,7 +21,7 @@ export const UserInfo: FC<UserInfoProps> = ({ userId }) => {
   }, [refetch, userId, shouldRefetchOnUserIdChange]);
 
   if (isLoading) {
-    return <div>Skeleton...</div>
+    return <UserInfoContentSkeleton/>
   }
 
   if (!user) {
