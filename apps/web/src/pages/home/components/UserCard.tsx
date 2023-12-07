@@ -3,6 +3,7 @@ import { User } from '../../../models/User.ts';
 import { Avatar, Card } from '@mvst-ui';
 import { useRouter } from '../../../hooks/router/useRouter.tsx';
 import { Public } from '../../../router/routes/Public.ts';
+import { DetailCard } from './atoms/DetailContainer.tsx';
 
 export interface InputProps {
 	user: User;
@@ -10,27 +11,37 @@ export interface InputProps {
 
 export const UserCard: FC<InputProps> = ({ user }) => {
 	const { navigate } = useRouter();
+	const { location, company, repositories, avatarUrl, name, login, bio } = user;
+
+	const shouldRenderFirstDot = Boolean(location && Boolean(repositories.totalCount || company));
+	const shouldRenderSecondDot = Boolean(Boolean(location || repositories.totalCount) && company);
+
+	const handleOnClickCard = () => {
+		navigate(Public.USER.to(login));
+	}
 
 	return (
-		<Card onClick={() => navigate(Public.USER.to(user.login))}>
-			<div className="flex flex-row gap-4">
-				<div className="flex flex-row h-12">
-					<Avatar src={user.avatarUrl} size='m' />
+		<Card onClick={handleOnClickCard}>
+			<div className="flex flex-col sm:flex-row gap-4">
+				<div className="flex flex-col sm:flex-row h-10 items-center">
+					<Avatar src={avatarUrl} size='m' />
 				</div>
-				<div className="flex flex-col gap-2">
-					<div className="flex flex-row gap-2 items-end h-min">
-						<p className="text-base leading-4">
-							{user.name}
-						</p>
-						<p className="text-base leading-4 text-gray-400">
-							{user.login}
-						</p>
+				<div className="flex flex-col gap-3 sm:gap-2">
+					<div className="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center h-min">
+						<span className="font-bold text-base leading-4">
+							{name}
+						</span>
+						<span className="text-sm sm:text-base leading-4 text-gray-400">
+							{login}
+						</span>
 					</div>
-					{user.bio && <p className="text-sm text-left max-w-lg">{user.bio}</p>}
-					<div className="flex flex-row gap-3">
-						{user.location && <p className="text-xs text-gray-400">{user.location}</p>}
-						{Boolean(user.repositories.totalCount) && <p className="text-xs text-gray-400">{user.repositories.totalCount}</p>}
-						{user.company && <p className="text-xs text-gray-400">{user.company}</p>}
+					{bio && <span className="text-sm text-center sm:text-left max-w-lg">{bio}</span>}
+					<div className="flex flex-row gap-3 items-center justify-items-center sm:justify-items-start">
+						{location && <DetailCard type="location"content={location}/>}
+						{shouldRenderFirstDot && <span className="text-xs text-gray-400">·</span>}
+						{Boolean(repositories.totalCount) && <DetailCard type="repositories" content={repositories.totalCount}/>}
+						{shouldRenderSecondDot && <span className="text-xs text-gray-400">·</span>}
+						{company && <DetailCard type="company" content={company}/>}
 					</div>
 				</div>
 			</div>

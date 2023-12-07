@@ -13,7 +13,7 @@ export const Card: FC<CardProps> = ({ onClick, children }) => {
 
   return (
     <div
-      className="p-4 hover:scale-105 rounded-md bg-gray-800 mb-4"
+      className="p-4 hover:scale-105 duration-200 rounded-md bg-gray-800 mb-4 cursor-pointer"
       onClick={handleOnClick}
     >
       {children}
