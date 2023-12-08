@@ -1,54 +1,37 @@
 import { Divider, Dropdown } from '@mvst-ui';
-import { useState, type FC, useEffect } from 'react';
-import { useGet } from '../hooks/api/useGet.tsx';
+import { useState, type FC } from 'react';
 import { User } from '../models/User.ts';
 import { API } from '../lib/API.ts';
 import { useRouter } from '../hooks/router/useRouter.tsx';
 import { Public } from '../router/routes/Public.ts';
 import { UserCard } from './UserCard.tsx';
+import { useGetDebounced } from '../hooks/api/useGetDebouced.tsx';
 
 export interface UserSearcherProps {
 }
 
 export const UserSearcher: FC<UserSearcherProps> = () => {
-
-	const [searchQuery, setSearchQuery] = useState<string>('');
-  const [typingTimeout, setTypingTimeout] = useState<any>(null);
-
-
-  const { data, refetch } = useGet<User[]>(API.users.findByUsername({ username: searchQuery }));
-
-  useEffect(() => {
-    return () => typingTimeout && clearTimeout(typingTimeout);
-  });
-
-  const startTimeout = (value: string) => {
-    return setTimeout(() => {
-      setTypingTimeout(null);
-      setSearchQuery(value);
-      refetch();
-    }, 500);
-  };
+	const [username, setUsername] = useState<string>('');
+  const { data } = useGetDebounced<User[]>(API.users.findByUsername, { username });
 
   const inputHandler = (value: string) => {
-    typingTimeout && clearTimeout(typingTimeout);
-    setTypingTimeout(startTimeout(value));
+    setUsername(value);
   };
 
 	const { navigate } = useRouter();
 
-	const handleOnClickCard = (user: string) => () => {
+	const handleOnClickItem = (user: string) => () => {
+    setUsername('');
 		navigate(Public.USER.to(user));
 	}
 
 	return (
-		<Dropdown variant="searcher" onChange={inputHandler} placeholder="Search user..." dropLimit={false}>
-			{searchQuery.length ? data?.length
+		<Dropdown variant="searcher" onChange={inputHandler} placeholder="Search user..." dropLimit={false} value={username}>
+			{username.length ? data?.length
 				?	data.map((user, index) => <>
-					<Dropdown.Item key={user.login} onSelect={handleOnClickCard(user.login)}>{<UserCard user={user}/>}</Dropdown.Item>
+					<Dropdown.Item key={user.login} onSelect={handleOnClickItem(user.login)}>{<UserCard user={user}/>}</Dropdown.Item>
           {(data.length !== index + 1) && <Divider/>}
-        </>
-					)
+        </>)
 				: <Dropdown.Item>No users found</Dropdown.Item> : null
 			}
 		</Dropdown>

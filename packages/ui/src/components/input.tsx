@@ -5,6 +5,7 @@ export interface InputProps {
   onChange?: (newValue: string) => void;
   onFocus?: () => void;
   placeholder?: string;
+  value?: string;
 }
 
 export const Input: FC<InputProps> = (props) => {
@@ -12,7 +13,8 @@ export const Input: FC<InputProps> = (props) => {
     name,
     onChange,
     onFocus,
-    placeholder
+    placeholder,
+    value
   } = props;
 
   const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -31,6 +33,7 @@ export const Input: FC<InputProps> = (props) => {
       onFocus={handleOnFocus}
       placeholder={placeholder}
       type="input"
+      value={value}
     />
   );
 };

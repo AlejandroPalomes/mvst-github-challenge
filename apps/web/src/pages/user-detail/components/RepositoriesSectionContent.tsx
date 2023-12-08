@@ -1,32 +1,19 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Repository } from '../../../models/Repository.ts';
 import { RepositoryCard } from './RepositoryCard.tsx';
-import { useGet } from '../../../hooks/api/useGet.tsx';
 import { API } from '../../../lib/API.ts';
 import { RepositoriesSectionContentSkeleton } from './skeletons/RepositoriesSectionContent.skeleton.tsx';
+import { useGetDebounced } from '../../../hooks/api/useGetDebouced.tsx';
 
 interface RepositoriesSectionContentProps {
   userId: string;
-  searchQuery: string;
+  repoName: string;
   language?: string;
 }
 
-export const RepositoriesSectionContent: FC<RepositoriesSectionContentProps> = ({ userId, searchQuery, language }) => {
-  const [refetchOnUserId, setRefetchOnUserId] = useState<string>(userId);
-  const [refetchOnQuery, setRefetchOnQuery] = useState<string>(searchQuery);
-  const [refetchOnLanguage, setRefetchOnLanguage] = useState<string | undefined>(language);
-  const { data: repositories, refetch, isLoading } = useGet<Repository[]>(API.repositories.findBy({ username: userId, partialName: searchQuery, language }));
-
-  useEffect(() => {
-    const shouldRefetch = refetchOnQuery !== searchQuery || refetchOnUserId !== userId || refetchOnLanguage !== language;
-    if (shouldRefetch) {
-      refetch();
-      setRefetchOnUserId(userId);
-      setRefetchOnQuery(searchQuery);
-      setRefetchOnLanguage(language);
-    }
-  }, [refetch, searchQuery, userId, language, refetchOnQuery, refetchOnUserId, refetchOnLanguage]);
-
+export const RepositoriesSectionContent: FC<RepositoriesSectionContentProps> = ({ userId, repoName, language }) => {
+  const { data: repositories, isLoading } = useGetDebounced<Repository[]>(API.repositories.findBy, { username: userId, repoName, language });
+  
   if (isLoading) {
     return <RepositoriesSectionContentSkeleton/>
   }
@@ -34,7 +21,6 @@ export const RepositoriesSectionContent: FC<RepositoriesSectionContentProps> = (
   if (!repositories) {
     return <div>Error loading user...</div>;
   }
-
 
   return (
     <div className="flex flex-col gap-4">

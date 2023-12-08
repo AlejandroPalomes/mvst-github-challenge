@@ -11,14 +11,13 @@ interface UserInfoProps {
 
 export const UserInfo: FC<UserInfoProps> = ({ userId }) => {
   const [shouldRefetchOnUserIdChange, setShouldRefetchOnUserIdChange] = useState<string>(userId);
-  const { data: user, isLoading, refetch } = useGet<User>(API.users.getInfoById({ username: userId }));
+  const { data: user, isLoading } = useGet<User>(API.users.getInfoById, { username: userId });
 
   useEffect(() => {
     if (shouldRefetchOnUserIdChange !== userId) {
-      refetch();
       setShouldRefetchOnUserIdChange(userId);
     }
-  }, [refetch, userId, shouldRefetchOnUserIdChange]);
+  }, [userId, shouldRefetchOnUserIdChange]);
 
   if (isLoading) {
     return <UserInfoContentSkeleton/>

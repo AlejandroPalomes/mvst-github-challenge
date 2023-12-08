@@ -9,3 +9,4 @@ export { Input, type InputProps } from './components/input';
 export { LocationIcon } from './components/location-icon';
 export { CaretIcon } from './components/caret-icon';
 export { Divider } from './components/divider';
+export { Spinner } from './components/spinner';

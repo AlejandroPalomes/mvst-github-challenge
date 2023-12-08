@@ -6,40 +6,44 @@ export interface UseGetResult<T> {
   data?: T;
   isLoading: boolean;
   error: any;
-  refetch: () => void;
 }
 
-type FetcherType<T> = () => Promise<T>
+interface GithubResponse {}
 
-interface TempGithubResponse {}
+interface APIVariables {
+  username?: string;
+  repoName?: string;
+  language?: string;
+}
 
-export const useGet = <T extends TempGithubResponse>(fetcher: FetcherType<T>): UseGetResult<T> => {
+/**
+ * Agnostic hook to perform GET calls to GitHub API
+ * 
+ * @param api - Function to call GitHub API. Must be from API.ts file
+ * @param variables - Search params
+ * @returns Response from GitHubAPI v4
+ */
+export const useGet = <T extends GithubResponse>(api: any, variables: APIVariables = {}): UseGetResult<T> => {
 
   const [data, setData] = useState<T | undefined>();
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { username, repoName, language } = variables;
 
   const doAPICall = useCallback(async (): Promise<void> => {
-    if (isLoading) {
-      try {
-        const response = await fetcher();
-        setData(response);
-      } catch (error: any) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
+    try {
+      const response = await api({ username, repoName, language })();
+      setData(response);
+    } catch (error: any) {
+      setError(error);
+    } finally {
+      setLoading(false);
     }
-  }, [fetcher, isLoading])
+  }, [api, username, repoName, language])
 
   useEffect(() => {
     doAPICall();
   }, [doAPICall]);
 
-  const refetch = () => {
-    setLoading(true);
-    doAPICall();
-  }
-
-  return { data, isLoading, error, refetch };
+  return { data, isLoading, error };
 };

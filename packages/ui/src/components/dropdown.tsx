@@ -25,7 +25,8 @@ interface DropdownCommonProps {
   onChange?: (newValue: string) => void;
   placeholder?: string;
   dropLimit?: boolean;
-  children?: React.ReactNode
+  children?: React.ReactNode;
+  value?: string;
 }
 
 type DropdownDynamicProps =
@@ -45,7 +46,7 @@ interface DropdownAtoms {
 
 type DropdownType = FC<DropdownCommonProps & DropdownDynamicProps> & DropdownAtoms;
 
-export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'static', headerTitle, dropLimit = true, children }) => {
+export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'static', headerTitle, dropLimit = true, children, value }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const Header = getHeader(variant);
 
@@ -63,6 +64,7 @@ export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'stati
           onChange={onChange}
           onFocus={onFocus}
           placeholder={placeholder}
+          value={value}
         />
         {isOpen && children &&
           <div className={`${optionsContainerStyles} ${optionsScrollStyles(dropLimit)}`} tabIndex={-1}>

@@ -21,8 +21,8 @@ export const RepositoryQueries = {
 					}
 				}
 			}`,
-		parseVariables: (variables: { username: string, partialName: string, language?: string }): string =>
-			`user:${variables.username} ${variables.partialName} ${variables.language ? 'language:' + variables.language : ''}`
+		parseVariables: (variables: { username: string, repoName: string, language?: string }): string =>
+			`user:${variables.username} ${variables.repoName} ${variables.language ? 'language:' + variables.language : ''}`
 	},
 	findAllLanguages: {
 		query: `

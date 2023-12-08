@@ -7,7 +7,7 @@ import { doGet, githubGetResponseParser, githubSearchResponseParser } from "./he
 
 export const API = {
   repositories: {
-    findBy: (variables: { username: string, partialName: string, language?: string }) => () =>
+    findBy: (variables: { username: string, repoName: string, language?: string }) => () =>
       doGet<Repository>(
         RepositoryQueries.findBy.query,
         githubSearchResponseParser,

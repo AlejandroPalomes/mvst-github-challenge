@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useParams } from 'react-router';
 import { UserInfo } from './components/UserInfo.tsx';
-import { RepostioriesSection } from './components/RepositriesSection.tsx';
+import { RepositoriesSection } from './components/RepositriesSection.tsx';
 import { useRouter } from '../../hooks/router/useRouter.tsx';
 import { Public } from '../../router/routes/Public.ts';
 
@@ -23,7 +23,7 @@ const UserPage: FC = () => {
       <UserInfo userId={userId}/>
     </div>
     <div className={mainContentStyles}>
-      <RepostioriesSection userId={userId}/>
+      <RepositoriesSection userId={userId}/>
     </div>
   </div>
 };
