@@ -1,6 +1,6 @@
 import { type FC } from 'react';
 import { User } from '../models/User.ts';
-import { Avatar } from '@mvst-ui';
+import { Avatar } from '@mvst/ui';
 import { useRouter } from '../hooks/router/useRouter.tsx';
 import { Public } from '../router/routes/Public.ts';
 import { UserExtraData } from './atoms/UserExtraData.tsx';

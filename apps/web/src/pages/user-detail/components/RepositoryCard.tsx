@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { Card } from '@mvst-ui';
+import { Card } from '@mvst/ui';
 import { Repository } from '../../../models/Repository.ts';
 import { LanguageDetail } from './atoms/LanguageDetail.tsx';
 

@@ -1,4 +1,4 @@
-import { BuildingIcon, Divider, EmailIcon, LocationIcon, WorldIcon } from '@mvst-ui';
+import { BuildingIcon, Divider, EmailIcon, LocationIcon, WorldIcon } from '@mvst/ui';
 import { FC } from 'react';
 import { User } from '../../../models/User.ts';
 import { UserInfoRow } from './atoms/UserInfoRow.tsx';

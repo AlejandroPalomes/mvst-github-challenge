@@ -1,6 +1,6 @@
 import { API } from '../../../lib/API.ts';
 import React, { FC, useEffect, useState } from 'react';
-import { Dropdown, Input } from '@mvst-ui';
+import { Dropdown, Input } from '@mvst/ui';
 import { RepositoriesSectionContent } from './RepositoriesSectionContent.tsx';
 import { useGet } from '../../../hooks/api/useGet.tsx';
 import { UserLanguage } from '../../../models/UserLanguage.ts';
@@ -35,7 +35,7 @@ export const RepositoriesSection: FC<RepositoriesSectionProps> = ({ username }):
 
   const { data: languages } = useGet<UserLanguage>(API.repositories.findAllLanguages, { username });
   const formattedLanguages = parseLanguage(languages);
-  
+
   /**
    * Clear data after username change
    */

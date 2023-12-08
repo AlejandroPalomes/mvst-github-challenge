@@ -1,4 +1,4 @@
-import { Spinner } from '@mvst-ui';
+import { Spinner } from '@mvst/ui';
 import { FC } from 'react';
 
 export const LoadingPage: FC = () => {

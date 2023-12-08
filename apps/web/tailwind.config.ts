@@ -5,7 +5,7 @@ const config: Config = {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@mvst-ui/src/components/*.tsx"
+    "./node_modules/@mvst/ui/src/components/*.tsx"
   ],
   theme: {
     extend: {

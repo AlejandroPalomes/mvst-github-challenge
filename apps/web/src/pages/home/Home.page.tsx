@@ -1,4 +1,4 @@
-import { Divider, GithubIcon, LinkedinIcon } from '@mvst-ui';
+import { Divider, GithubIcon, LinkedinIcon } from '@mvst/ui';
 import { FC } from 'react';
 
 const HomePage: FC = () => {

@@ -1,4 +1,4 @@
-import { GithubIcon } from '@mvst-ui';
+import { GithubIcon } from '@mvst/ui';
 import React, { type FC } from 'react';
 import { UserSearcher } from '../components/UserSearcher.tsx';
 import { useRouter } from '../hooks/router/useRouter.tsx';

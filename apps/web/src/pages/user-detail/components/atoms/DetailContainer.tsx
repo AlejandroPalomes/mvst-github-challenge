@@ -1,4 +1,4 @@
-import { BuildingIcon, FolderIcon, LocationIcon } from '@mvst-ui';
+import { BuildingIcon, FolderIcon, LocationIcon } from '@mvst/ui';
 import { type FC } from 'react';
 
 type CardType = 'location' | 'company' | 'repositories';

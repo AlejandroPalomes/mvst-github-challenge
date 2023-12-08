@@ -1,4 +1,4 @@
-import { Divider, Dropdown } from '@mvst-ui';
+import { Divider, Dropdown } from '@mvst/ui';
 import { useState, type FC } from 'react';
 import { User } from '../models/User.ts';
 import { API } from '../lib/API.ts';

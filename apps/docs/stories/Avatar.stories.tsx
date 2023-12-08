@@ -1,4 +1,4 @@
-import { Avatar, AvatarProps } from '@mvst-ui';
+import { Avatar, type AvatarProps } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
@@ -18,6 +18,6 @@ export const Primary: Story = {
   name: "Avatar",
   args: {
     size: "l",
-    src: "https://github.githubassets.com/favicons/favicon-dark.svg"
+    src: "https://i.pravatar.cc/300"
   },
 };

@@ -1,4 +1,4 @@
-import { Avatar, Divider, PeopleIcon } from '@mvst-ui';
+import { Avatar, Divider, PeopleIcon } from '@mvst/ui';
 import { FC } from 'react';
 import { User } from '../../../models/User.ts';
 import { UserInfoRow } from './atoms/UserInfoRow.tsx';
