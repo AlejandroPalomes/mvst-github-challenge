@@ -16,16 +16,16 @@ export const HeaderTemplate: FC<HeaderTemplateProps> = ({ children }) => {
   }
 
   return (
-      <div className="h-screen">
-        <div className="h-14 border-b border-solid border-customGray-600 z-50 w-full flex items-center px-4 gap-4">
-          <div onClick={handleOnClickIcon} className="cursor-pointer">
-            <GithubIcon size={32}/>
-          </div>
-          <UserSearcher/>
+    <div className="h-screen">
+      <div className="h-14 border-b border-solid border-customGray-600 z-50 w-full flex items-center px-4 gap-4">
+        <div onClick={handleOnClickIcon} className="cursor-pointer">
+          <GithubIcon size={32}/>
         </div>
-        <div className="h-full">
-          {children}
-        </div>
+        <UserSearcher/>
       </div>
+      <div className="h-full">
+        {children}
+      </div>
+    </div>
   );
 };

@@ -18,7 +18,6 @@ interface APIVariables {
 
 /**
  * Agnostic hook to perform GET calls to GitHub API
- * 
  * @param api - Function to call GitHub API. Must be from API.ts file
  * @param variables - Search params
  * @returns Response from GitHubAPI v4

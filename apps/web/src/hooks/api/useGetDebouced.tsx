@@ -18,7 +18,6 @@ interface VariablesI {
 
 /**
  * Debounced version of useGet (500ms debounce)
- * 
  * @param api - Function to call GitHub API. Must be from API.ts file
  * @param variables - Search params
  * @returns Response from GitHubAPI v4

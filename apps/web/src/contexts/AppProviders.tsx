@@ -1,8 +1,7 @@
-import { FC } from 'react';
+import React, { FC } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-//TODO Remove any
-const AppProviders: FC<{ children: any }> = ({ children }) => {
+const AppProviders: FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <BrowserRouter>

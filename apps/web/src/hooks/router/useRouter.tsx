@@ -10,7 +10,12 @@ interface UseRouterResult {
   pathname: string;
   search: string;
 }
-
+/**
+ * Wrapper for both useNavigate and useLocation.
+ * It extracts the basic methods needed to navigate
+ * through the React app
+ * @returns {UseRouterResult} - Navigation methods
+ */
 export const useRouter = (): UseRouterResult => {
   const baseNavigate = useNavigate();
   const { pathname, search } = useLocation();

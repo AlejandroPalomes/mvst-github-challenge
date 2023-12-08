@@ -5,6 +5,9 @@ import { RepositoryQueries } from "./api/queries/RepositoryQueries.ts";
 import { UserQueries } from "./api/queries/UserQueries.ts";
 import { doGet, githubGetResponseParser, githubSearchResponseParser } from "./helpers.ts";
 
+/**
+ * API methods source file
+ */
 export const API = {
   repositories: {
     findBy: (variables: { username: string, repoName: string, language?: string }) => () =>

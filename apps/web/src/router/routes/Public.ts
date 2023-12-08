@@ -8,6 +8,9 @@ const PublicRoutesIdentifiers = <const>[
 
 type PublicRoutesType = typeof PublicRoutesIdentifiers[number];
 
+/**
+ * Public route paths
+ */
 export const Public = {
   HOME: {
     route: '/'
