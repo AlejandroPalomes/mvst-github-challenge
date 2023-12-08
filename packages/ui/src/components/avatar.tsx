@@ -17,12 +17,12 @@ const getSize = (size: AvatarSize) => {
   }
 }
 
-export interface InputProps {
+export interface AvatarProps {
   src: string;
   size?: AvatarSize;
 }
 
-export const Avatar: FC<InputProps> = ({ src, size = 'm'}) => {
+export const Avatar: FC<AvatarProps> = ({ src, size = 'm'}) => {
   
   return (
     <img

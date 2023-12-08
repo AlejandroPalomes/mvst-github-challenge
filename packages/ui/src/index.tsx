@@ -1,4 +1,4 @@
-export { Avatar } from './components/avatar';
+export { Avatar, type AvatarProps } from './components/avatar';
 export { BuildingIcon } from './components/building-icon';
 export { Button, type ButtonProps } from "./button";
 export { Card } from './components/card';

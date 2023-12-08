@@ -1,4 +1,4 @@
-# Turborepo Design System Starter
+# MVST x Alejandro Palomes (Github Searcher)
 
 This guide explains how to use a React design system starter powered by:
 
