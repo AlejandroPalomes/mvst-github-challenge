@@ -21,6 +21,7 @@ export const RepositoryCard: FC<InputProps> = ({ repository }) => {
 				{description && <span className="text-sm text-gray-400 text-center sm:text-left max-w-lg">{description}</span>}
 				<div className="flex flex-row gap-3 items-center justify-items-center sm:justify-items-start">
 					{primaryLanguage && <LanguageDetail language={primaryLanguage}/>}
+					{/* <div>{repository.}</div> */}
 					{/* {shouldRenderFirstDot && <span className="text-xs text-gray-400">·</span>}
 					{Boolean(repositories.totalCount) && <DetailCard type="repositories" content={repositories.totalCount}/>}
 					{shouldRenderSecondDot && <span className="text-xs text-gray-400">·</span>}

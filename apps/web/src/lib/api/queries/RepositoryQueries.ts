@@ -10,12 +10,14 @@ export const RepositoryQueries = {
 								primaryLanguage {
 									id
 									name
+									color
 								}
 								owner {
 									login
 								}
 								description
 								createdAt
+								updatedAt
 							}
 						}
 					}

@@ -1,9 +1,6 @@
 import { FC } from 'react';
 
-interface RepositoriesSectionContentSkeletonProps {
-}
-
-export const RepositoriesSectionContentSkeleton: FC<RepositoriesSectionContentSkeletonProps> = () => {
+export const RepositoriesSectionContentSkeleton: FC = () => {
 
   return <div className="flex flex-col gap-4">
     <div className="p-4 h-24 bg-customGray-700 rounded-md w-full flex flex-col gap-2">

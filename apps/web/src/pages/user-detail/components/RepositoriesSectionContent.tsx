@@ -6,13 +6,13 @@ import { RepositoriesSectionContentSkeleton } from './skeletons/RepositoriesSect
 import { useGetDebounced } from '../../../hooks/api/useGetDebouced.tsx';
 
 interface RepositoriesSectionContentProps {
-  userId: string;
+  username: string;
   repoName: string;
   language?: string;
 }
 
-export const RepositoriesSectionContent: FC<RepositoriesSectionContentProps> = ({ userId, repoName, language }) => {
-  const { data: repositories, isLoading } = useGetDebounced<Repository[]>(API.repositories.findBy, { username: userId, repoName, language });
+export const RepositoriesSectionContent: FC<RepositoriesSectionContentProps> = ({ username, repoName, language }) => {
+  const { data: repositories, isLoading } = useGetDebounced<Repository[]>(API.repositories.findBy, { username, repoName, language });
   
   if (isLoading) {
     return <RepositoriesSectionContentSkeleton/>

@@ -31,7 +31,7 @@ export const useGet = <T extends GithubResponse>(api: any, variables: APIVariabl
 
   const doAPICall = useCallback(async (): Promise<void> => {
     try {
-      const response = await api({ username, repoName, language })();
+      const response = await api({ username, repoName, language });
       setData(response);
     } catch (error: any) {
       setError(error);

@@ -1,9 +1,6 @@
 import { FC } from 'react';
 
-interface UserInfoContentSkeletonProps {
-}
-
-export const UserInfoContentSkeleton: FC<UserInfoContentSkeletonProps> = () => {
+export const UserInfoContentSkeleton: FC = () => {
 
   return <>
     <div className="w-20 h-20 rounded-full bg-customGray-700"/>

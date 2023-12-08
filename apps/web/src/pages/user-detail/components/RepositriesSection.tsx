@@ -1,5 +1,5 @@
 import { API } from '../../../lib/API.ts';
-import React, { FC, useEffect, useState } from 'react';
+import React, { FC, useState } from 'react';
 import { Dropdown, Input } from '@mvst-ui';
 import { RepositoriesSectionContent } from './RepositoriesSectionContent.tsx';
 import { useGet } from '../../../hooks/api/useGet.tsx';
@@ -24,27 +24,17 @@ const parseLanguage = (languages?: UserLanguage): string[] => {
 }
 
 interface RepositoriesSectionProps {
-  userId: string;
+  username: string;
 }
 
-export const RepositoriesSection: FC<RepositoriesSectionProps> = ({ userId }): React.ReactNode => {
-  const [shouldClearData, setShouldClearData] = useState<string>(userId);
+export const RepositoriesSection: FC<RepositoriesSectionProps> = ({ username }): React.ReactNode => {
   const [language, setLanguage] = useState<string>();
   const [repoName, setRepoName] = useState<string>('');
 
   const { Item } = Dropdown;
 
-  const { data: languages } = useGet<UserLanguage>(API.repositories.findAllLanguages, { username: userId });
-
+  const { data: languages } = useGet<UserLanguage>(API.repositories.findAllLanguages, { username });
   const formattedLanguages = parseLanguage(languages);
-
-  useEffect(() => {
-    if(shouldClearData !== userId) {
-      setRepoName('');
-      setLanguage(undefined);
-      setShouldClearData(userId);
-    } 
-  }, [userId, shouldClearData]);
 
   const inputHandler = (value: string) => {
     setRepoName(value);
@@ -56,7 +46,7 @@ export const RepositoriesSection: FC<RepositoriesSectionProps> = ({ userId }): R
 
   return (
     <div className="flex flex-col gap-10">
-      <h3 className="text-left text-2xl lg:text-4xl font-bold hidden md:block">Repositories - remove {languages?.name} </h3>
+      <h3 className="text-left text-2xl lg:text-4xl font-bold hidden md:block">Repositories</h3>
       <div className="flex flex-col xl:flex-row gap-3 items-end">
         <div className="w-56 min-w-min xl:order-2">
           <Dropdown onChange={handleOnSelectLanguage} placeholder='Select language' headerTitle={language || 'Select language'}>
@@ -69,7 +59,7 @@ export const RepositoriesSection: FC<RepositoriesSectionProps> = ({ userId }): R
           <Input onChange={inputHandler} placeholder="Search repository..." value={repoName}/>
         </div>
       </div>
-      <RepositoriesSectionContent repoName={repoName} userId={userId} language={language}/>
+      <RepositoriesSectionContent repoName={repoName} username={username} language={language}/>
     </div>
   );
 };

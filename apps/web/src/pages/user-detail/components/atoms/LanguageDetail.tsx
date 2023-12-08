@@ -9,7 +9,7 @@ export interface LangiageDetailProps {
 export const LanguageDetail: FC<LangiageDetailProps> = ({ language }) => {
 	return (
 		<div className="flex flex-row gap-1">
-			<div/>
+			<div color='red' className='w-4 h-4 rounded-full b'/>
 			<p className="text-xs text-left text-gray-400">{language.name}</p>
 		</div>
 	);
