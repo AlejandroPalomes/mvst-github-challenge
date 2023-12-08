@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { useGet } from '../../../hooks/api/useGet.tsx';
 import { API } from '../../../lib/API.ts';
 import { User } from '../../../models/User.ts';
@@ -6,18 +6,11 @@ import { UserInfoContent } from './UserInfoContent.tsx';
 import { UserInfoContentSkeleton } from './skeletons/UserInfoContent.skeleton.tsx';
 
 interface UserInfoProps {
-  userId: string;
+  username: string;
 }
 
-export const UserInfo: FC<UserInfoProps> = ({ userId }) => {
-  const [shouldRefetchOnUserIdChange, setShouldRefetchOnUserIdChange] = useState<string>(userId);
-  const { data: user, isLoading } = useGet<User>(API.users.getInfoById, { username: userId });
-
-  useEffect(() => {
-    if (shouldRefetchOnUserIdChange !== userId) {
-      setShouldRefetchOnUserIdChange(userId);
-    }
-  }, [userId, shouldRefetchOnUserIdChange]);
+export const UserInfo: FC<UserInfoProps> = ({ username }) => {
+  const { data: user, isLoading } = useGet<User>(API.users.getInfoById, { username });
 
   if (isLoading) {
     return <UserInfoContentSkeleton/>

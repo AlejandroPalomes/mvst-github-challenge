@@ -12,13 +12,12 @@ export interface UserSearcherProps {
 
 export const UserSearcher: FC<UserSearcherProps> = () => {
 	const [username, setUsername] = useState<string>('');
+  const { navigate } = useRouter();
   const { data } = useGetDebounced<User[]>(API.users.findByUsername, { username });
 
   const inputHandler = (value: string) => {
     setUsername(value);
   };
-
-	const { navigate } = useRouter();
 
 	const handleOnClickItem = (user: string) => () => {
     setUsername('');
