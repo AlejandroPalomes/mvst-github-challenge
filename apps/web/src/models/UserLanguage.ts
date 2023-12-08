@@ -1,5 +1,4 @@
 export interface UserLanguage {
-    name: string;
     repositories: {
       nodes: UserLanguageRepository[]
     }
