@@ -9,6 +9,7 @@ export { EmailIcon } from './components/email-icon';
 export { FolderIcon } from './components/folder-icon';
 export { GithubIcon } from './components/github-icon';
 export { Input, type InputProps } from './components/input';
+export { LinkedinIcon } from './components/linkedin-icon';
 export { LocationIcon } from './components/location-icon';
 export { PeopleIcon } from './components/people-icon';
 export { Spinner } from './components/spinner';

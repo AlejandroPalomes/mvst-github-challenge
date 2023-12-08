@@ -13,8 +13,8 @@ export const RepositoryCard: FC<InputProps> = ({ repository }) => {
 	return (
 		<Card>
 			<div className="flex flex-col gap-3 sm:gap-2">
-				<div className="flex flex-col sm:flex-row gap-1 sm:gap-2 items-center h-min">
-					<span className="font-bold text-base leading-4">
+				<div className="flex flex-col sm:flex-row gap-1 sm:gap-2 items-start h-min">
+					<span className="font-bold text-base leading-4 text-left">
 						{name}
 					</span>
 				</div>
