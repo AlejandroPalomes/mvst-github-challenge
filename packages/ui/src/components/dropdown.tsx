@@ -7,7 +7,7 @@ import { DropdownStaticHeader } from './dropdown-static-header';
 
 const optionsContainerStyles = 'absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none';
 const optionsScrollStyles = (hasLimit: boolean): string =>
-  hasLimit ? 'h-48 overflow-y-scroll' : '';
+  hasLimit ? 'h-48 overflow-y-scroll' : 'overflow-y-hidden';
 
 type DropdownVariants = 'searcher' | 'static';
 
@@ -66,7 +66,7 @@ export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'stati
         />
         {isOpen && children &&
           <div className={`${optionsContainerStyles} ${optionsScrollStyles(dropLimit)}`} tabIndex={-1}>
-            <ul className="py-1 bg-customGray-600 rounded-md" role="none">
+            <ul className="bg-customGray-600 rounded-md" role="none">
               {children}
             </ul>
           </div>
