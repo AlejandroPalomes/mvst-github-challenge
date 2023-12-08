@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { type IconProps } from '../utils/icon-utils';
+import { type IconProps } from '../utils/icon-types';
 
 export const Spinner: FC<IconProps> = ({ color = 'white', size = 24}) => {
   return (

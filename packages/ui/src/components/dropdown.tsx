@@ -7,7 +7,7 @@ import { DropdownStaticHeader } from './dropdown-static-header';
 
 const optionsContainerStyles = 'absolute left-0 z-10 mt-2 w-full origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none';
 const optionsScrollStyles = (hasLimit: boolean): string =>
-  hasLimit ? 'h-48 overflow-y-scroll' : 'overflow-y-hidden';
+  hasLimit ? 'max-h-48 overflow-y-scroll' : 'overflow-y-hidden';
 
 type DropdownVariants = 'searcher' | 'static';
 
@@ -44,7 +44,7 @@ interface DropdownAtoms {
   Item: DropdownItem;
 }
 
-type DropdownType = FC<DropdownCommonProps & DropdownDynamicProps> & DropdownAtoms;
+export type DropdownType = FC<DropdownCommonProps & DropdownDynamicProps> & DropdownAtoms;
 
 export const Dropdown: DropdownType = ({ onChange, placeholder, variant = 'static', headerTitle, dropLimit = true, children, value }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);

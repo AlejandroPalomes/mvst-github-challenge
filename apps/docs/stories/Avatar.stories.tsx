@@ -2,22 +2,29 @@ import { Avatar, type AvatarProps } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 export default {
-  title: 'Avatar/Avatar',
-  component: Avatar
-  // decorators: [(Story) => <div style={{ width: '300px' }}><Story/></div>]
+  title: 'Components/Avatar',
+  component: Avatar,
+  argTypes: {
+    size: {
+      control: { type: 'select' },
+      options: ['s', 'm', 'l', 'xl'],
+    }
+  }
 } as Meta;
 
 type Story = StoryObj<AvatarProps>;
 
 export const Primary: Story = {
   render: (props) => (
-    <Avatar
-      {...props}
-    />
+    <div className="text-red-700">
+      <Avatar
+        {...props}
+      />
+    </div>
   ),
-  name: "Avatar",
+  name: 'Avatar',
   args: {
-    size: "l",
-    src: "https://i.pravatar.cc/300"
+    size: 'l',
+    src: 'https://i.pravatar.cc/300'
   },
 };

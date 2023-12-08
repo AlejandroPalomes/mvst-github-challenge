@@ -1,5 +1,6 @@
 import { type FC } from 'react';
-import { getStrokeWidth, type IconProps } from '../utils/icon-utils';
+import { type IconProps } from '../utils/icon-types';
+import { getStrokeWidth } from '../utils/icon-helper';
 
 export const PeopleIcon: FC<IconProps> = ({ size = 24, color = 'white' }) => {
   const strokeWidth = getStrokeWidth(size);

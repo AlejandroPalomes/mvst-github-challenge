@@ -5,16 +5,13 @@
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "Node16",
     "skipLibCheck": true,
-
-    /* Bundler mode */
+    "allowJs": true,
     "moduleResolution": "Node16",
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-
-    /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,

@@ -12,23 +12,26 @@
   },
   "dependencies": {
     "@mvst/ui": "workspace:*",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "18.2.0",
+    "react-dom": "18.2.0"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@storybook/addon-actions": "^7.5.3",
-    "@storybook/addon-docs": "^7.5.3",
-    "@storybook/addon-essentials": "^7.5.3",
-    "@storybook/addon-links": "^7.5.3",
-    "@storybook/react": "^7.5.3",
-    "@storybook/react-vite": "^7.5.3",
-    "@vitejs/plugin-react": "^4.2.0",
-    "eslint": "^8.54.0",
-    "serve": "^14.2.1",
-    "storybook": "^7.5.3",
     "@repo/typescript-config": "workspace:*",
-    "typescript": "^5.3.2",
-    "vite": "^5.0.2"
+    "@storybook/addon-actions": "7.5.3",
+    "@storybook/addon-docs": "7.5.3",
+    "@storybook/addon-essentials": "7.5.3",
+    "@storybook/addon-links": "7.5.3",
+    "@storybook/react-vite": "7.5.3",
+    "@storybook/react": "7.5.3",
+    "@vitejs/plugin-react": "4.2.0",
+    "autoprefixer": "10.4.16",
+    "eslint": "8.54.0",
+    "postcss": "8.4.31",
+    "serve": "14.2.1",
+    "storybook": "7.5.3",
+    "tailwindcss": "3.3.6",
+    "typescript": "5.3.2",
+    "vite": "5.0.2"
   }
 }

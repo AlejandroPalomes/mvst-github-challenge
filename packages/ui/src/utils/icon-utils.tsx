@@ -1,26 +1,28 @@
-export const IconSizes = [16, 20, 24, 32, 40, 60];
-export type IconSize = typeof IconSizes[number];
+import { type FC } from 'react';
+import { BuildingIcon } from '../components/building-icon';
+import { CaretIcon } from '../components/caret-icon';
+import { EmailIcon } from '../components/email-icon';
+import { FolderIcon } from '../components/folder-icon';
+import { GithubIcon } from '../components/github-icon';
+import { LinkedinIcon } from '../components/linkedin-icon';
+import { LocationIcon } from '../components/location-icon';
+import { PeopleIcon } from '../components/people-icon';
+import { WorldIcon } from '../components/world-icon';
+import type { IconType, IconComponent, IconProps } from './icon-types';
 
-export const getStrokeWidth = (size: IconSize): number => {
-  switch (size) {
-    case 16:
-      return 2;
-    case 20:
-      return 1.68;
-    case 24:
-      return 1.5;
-    case 32:
-      return 1.6;
-    case 40:
-      return 1.02;
-    case 60:
-      return 1;
-    default:
-      throw new Error(`Invalid size: ${size}`);
-  }
+const IconsComponent: IconComponent = {
+  building: BuildingIcon,
+  caret: CaretIcon,
+  email:EmailIcon,
+  folder: FolderIcon,
+  github: GithubIcon,
+  linkedin: LinkedinIcon,
+  location: LocationIcon,
+  people: PeopleIcon,
+  world: WorldIcon
 };
 
-export interface IconProps {
-  color?: string;
-  size?: IconSize;
-}
+export const getIcon = (name: IconType): FC<IconProps> => {
+  const icon = IconsComponent[name];
+  return icon;
+};

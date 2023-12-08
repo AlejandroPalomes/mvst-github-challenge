@@ -1,5 +1,6 @@
 import { type FC } from 'react';
-import { type IconProps, getStrokeWidth } from '../utils/icon-utils';
+import { type IconProps } from '../utils/icon-types';
+import { getStrokeWidth } from '../utils/icon-helper';
 
 export const BuildingIcon: FC<IconProps> = ({ color = 'white', size = 24}) => {
   const strokeWidth = getStrokeWidth(size);

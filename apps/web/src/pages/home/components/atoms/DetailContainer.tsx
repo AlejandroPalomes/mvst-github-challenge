@@ -22,6 +22,7 @@ export interface DetailCardProps {
 
 export const DetailCard: FC<DetailCardProps> = ({ type, content }) => {
 	const Icon = getIcon(type);
+
 	return (
 		<div className="flex flex-row gap-1">
 			<Icon size={16} color="rgb(156 163 175)"/>

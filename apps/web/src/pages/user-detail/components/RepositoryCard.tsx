@@ -3,11 +3,11 @@ import { Card } from '@mvst/ui';
 import { Repository } from '../../../models/Repository.ts';
 import { LanguageDetail } from './atoms/LanguageDetail.tsx';
 
-export interface InputProps {
+export interface RepositoryCardProps {
 	repository: Repository;
 }
 
-export const RepositoryCard: FC<InputProps> = ({ repository }) => {
+export const RepositoryCard: FC<RepositoryCardProps> = ({ repository }) => {
 	const { name, primaryLanguage, description } = repository;
 
 	return (

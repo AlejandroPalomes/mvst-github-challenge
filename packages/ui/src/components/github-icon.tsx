@@ -1,5 +1,5 @@
 import { type FC } from 'react';
-import { type IconProps } from '../utils/icon-utils';
+import { type IconProps } from '../utils/icon-types';
 
 export const GithubIcon: FC<IconProps> = ({ color = 'white', size = 24}) => {
   return <svg height={size} viewBox="0 0 48 48" width={size} xmlns="http://www.w3.org/2000/svg">

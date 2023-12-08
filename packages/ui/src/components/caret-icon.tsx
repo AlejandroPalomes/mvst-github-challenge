@@ -1,9 +1,6 @@
 import type { FC } from 'react';
-import { type IconProps, getStrokeWidth } from '../utils/icon-utils';
-
-interface CaretProps extends IconProps {
-  direction: 'down' | 'top' | 'left' | 'right';
-}
+import { type IconProps } from '../utils/icon-types';
+import { getStrokeWidth } from '../utils/icon-helper';
 
 const Directions = {
   'down': 'rotate-90',
@@ -12,7 +9,7 @@ const Directions = {
   'right': ''
 };
 
-export const CaretIcon: FC<CaretProps> = ({ size = 24, direction = 'right', color = "white" }) => {
+export const CaretIcon: FC<IconProps> = ({ size = 24, direction = 'right', color = "white" }) => {
   const strokeWidth = getStrokeWidth(size);
 
   return <svg className={`transform ${Directions[direction]} duration-150`} fill="none" height={size} viewBox="0 0 24 24" width={size} xmlns="http://www.w3.org/2000/svg">
