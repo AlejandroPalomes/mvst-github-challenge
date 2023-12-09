@@ -1,4 +1,3 @@
-import React from 'react';
 import { Dropdown, type DropdownType } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 

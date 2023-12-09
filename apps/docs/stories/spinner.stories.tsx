@@ -1,32 +1,32 @@
-import { Avatar, type AvatarProps } from '@mvst/ui';
+import { Spinner, type IconProps } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Avatar> = {
-  title: 'Components/Avatar',
-  component: Avatar,
+const meta: Meta<typeof Spinner> = {
+  title: 'Components/Spinner',
+  component: Spinner,
   argTypes: {
     size: {
       control: { type: 'select' },
-      options: ['s', 'm', 'l', 'xl'],
-    }
+      options: [16, 20, 24, 32, 40, 60]
+    },
   }
 } as Meta;
 
 export default meta;
 
-type Story = StoryObj<AvatarProps>;
+type Story = StoryObj<IconProps>;
 
 export const Primary: Story = {
   render: (props) => (
     <div className="text-red-700">
-      <Avatar
+      <Spinner
         {...props}
       />
     </div>
   ),
-  name: 'Avatar',
+  name: 'Spinner',
   args: {
-    size: 'l',
-    src: 'https://i.pravatar.cc/300'
+    size: 60,
+    color: 'black'
   },
 };

@@ -15,5 +15,5 @@ export { PeopleIcon } from './components/people-icon';
 export { Spinner } from './components/spinner';
 export { WorldIcon } from './components/world-icon';
 
-// export { type IconProps, IconSizes, type IconSize, Icons } from './utils/icon-types'
-// export { getIcon } from './utils/icon-utils'
+export { type IconProps, IconSizes, type IconSize, Icons } from './utils/icon-types'
+export { getIcon } from './utils/icon-utils'
