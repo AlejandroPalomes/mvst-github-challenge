@@ -27,17 +27,23 @@ The task is to allow the user to type in the name of a github user and display h
     - Instructions on how to run the test suite
     - Future improvements
 
+
+
 ## How did I solve the challenge?
+
+I created a monorepo with Turborepo build system, which allowed me to develop a UI library, consumed by both an app and a storybook.
 
 - 🏎 [Turborepo](https://turbo.build/repo) — It is a high-performance build system for JavaScript and TypeScript codebases. It was designed after the workflows used by massive software engineering organizations to ship code at scale. Turborepo abstracts the complex configuration needed for monorepos and provides fast, incremental builds with zero-configuration remote caching.
 - 🚀 [React](https://reactjs.org/) — JavaScript library for user interfaces
 - 🛠 [Tsup](https://github.com/egoist/tsup) — TypeScript bundler powered by esbuild
 - 📖 [Storybook](https://storybook.js.org/) — UI component environment powered by Vite
 
-As well as a few others tools preconfigured:
+As well as a few others tools:
 
 - [TypeScript](https://www.typescriptlang.org/) for static type checking
 - [ESLint](https://eslint.org/) for code linting
+
+
 
 ## How to run the project
 
@@ -61,7 +67,8 @@ That's all you need to do. Now you are good to go! 🤘
 - `pnpm test` - Run test suite
 
 
-## Apps & Packages
+
+### Apps & Packages
 
 This Turborepo includes the following packages and applications:
 
@@ -71,6 +78,8 @@ This Turborepo includes the following packages and applications:
 - `packages/tailwind-config`: Shared `tailwind.config.ts`s used throughout the Turborepo
 - `packages/typescript-config`: Shared `tsconfig.json`s used throughout the Turborepo
 - `packages/eslint-config`: ESLint preset
+
+
 
 ## What's next? 🏗
 
