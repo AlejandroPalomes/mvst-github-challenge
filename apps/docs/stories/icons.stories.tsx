@@ -1,4 +1,4 @@
-import { Icons, getIcon, type IconProps } from '@mvst/ui';
+import { Icons, getIcon, type IconProps, type IconType } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta = {
@@ -22,7 +22,7 @@ type Story = StoryObj<IconProps>;
 export const Primary: Story = {
   render: (props) => (
     <div className="flex flex-row flex-wrap gap-10">
-      {Icons.map((iconName: string) => {
+      {Icons.map((iconName: IconType) => {
       const IconToRender = getIcon(iconName);
       return <div className="flex flex-col items-center gap-2" key={iconName}>
         <div className="p-8 border border-solid border-customGray-200 rounded-lg">

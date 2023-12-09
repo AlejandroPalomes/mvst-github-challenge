@@ -1,4 +1,4 @@
-import React, { type FC } from 'react';
+import { type FC } from 'react';
 import { useDropdownContext } from './dorpdown-context';
 import { CaretIcon } from './caret-icon';
 
