@@ -18,7 +18,7 @@ The task is to allow the user to type in the name of a github user and display h
 
 - ✅ Add storybook and divide the components
 - ✅ Write tests
-- ⭕️ SDeploy it somewhere (like [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/))
+- ⭕️ Deploy it somewhere (like [Netlify](https://www.netlify.com/) or [Heroku](https://www.heroku.com/))
 - ✅ Document [code](https://google.github.io/styleguide/jsguide.html#jsdoc)
 - ✅ Use the [v4 API](https://docs.github.com/en/graphql), which is built using GraphQL.
 - ✅ Write a README that includes
