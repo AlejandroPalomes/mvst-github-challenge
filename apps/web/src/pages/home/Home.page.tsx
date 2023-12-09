@@ -12,7 +12,7 @@ const HomePage: FC = () => {
           <p>Hello! I'm Alejandro Palomes, and this is my MVST Challenge task home page.</p>
           <p>In this page you'll find
             useful information about my persona, like a short description or some links to social networks.</p>
-          <p> To check the task iteself, just search for a user name at the navar.</p>
+          <p> To check the task itself, just search for a user name at the navbar.</p>
         </div>
         <div className="max-w-xs w-full">
           <Divider color={600}/>
