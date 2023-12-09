@@ -27,10 +27,12 @@ export const UserSearcher: FC<UserSearcherProps> = () => {
 	return (
 		<Dropdown variant="searcher" onChange={inputHandler} placeholder="Search user..." dropLimit={false} value={username}>
 			{username.length ? data?.length
-				?	data.map((user, index) => <>
-					<Dropdown.Item key={user.login} onSelect={handleOnClickItem(user.login)}>{<UserCard user={user}/>}</Dropdown.Item>
+				?	data.map((user, index) => <div key={user.login}>
+					<Dropdown.Item onSelect={handleOnClickItem(user.login)}>
+						{<UserCard user={user}/>}
+					</Dropdown.Item>
           {(data.length !== index + 1) && <Divider/>}
-        </>)
+        </div>)
 				: <Dropdown.Item>No users found</Dropdown.Item> : null
 			}
 		</Dropdown>

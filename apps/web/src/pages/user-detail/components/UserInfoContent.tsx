@@ -16,7 +16,7 @@ export const UserInfoContent: FC<UserInfoContentProps> = ({ user }) => {
         <span className="text-lg font-bold leading-4">{user.name}</span>
         <span className="text-base text-gray-400">{user.login}</span>
       </div>
-      {Boolean(user.status?.message.length) &&
+      {Boolean(user.status?.message?.length) &&
         <UserInfoRow>
           <span>{user.status?.message}</span>
         </UserInfoRow>}

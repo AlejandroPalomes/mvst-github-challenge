@@ -29,7 +29,7 @@ The task is to allow the user to type in the name of a github user and display h
 
 
 
-## How did I solve the challenge?
+## How did I solve the challenge? 🕵️‍♂️
 
 I created a monorepo with Turborepo build system, which allowed me to develop a UI library, consumed by both an app and a storybook.
 
@@ -45,7 +45,7 @@ As well as a few others tools:
 
 
 
-## How to run the project
+## How to run the project 🏃‍♂️
 
 The first thing to do is to obtain your very own GitHub API key. In order to achieve that, you must follow the steps in "[Creating a fine-grained personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-fine-grained-personal-access-token)", to get a fine-grained personal access token. The default permissions are enough to grant access through all the app requests. 
 
@@ -56,7 +56,7 @@ Remember to install dependencies in the root:
 pnpm install
 ```
 
-By installing dependencies in the root, the config is propagated through all apps and packages in our monorepo.
+By installing dependencies in the root, the config is propagated through all apps and packages in the monorepo.
 
 That's all you need to do. Now you are good to go! 🤘
 

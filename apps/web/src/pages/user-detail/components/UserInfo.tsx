@@ -17,6 +17,7 @@ export const UserInfo: FC<UserInfoProps> = ({ username }) => {
   }
 
   if (!user) {
+    //TODO Add error component
     return <div>Error loading user...</div>;
   }
 
