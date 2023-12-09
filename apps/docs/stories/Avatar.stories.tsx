@@ -1,7 +1,8 @@
+import React from 'react';
 import { Avatar, type AvatarProps } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Avatar> = {
   title: 'Components/Avatar',
   component: Avatar,
   argTypes: {
@@ -11,6 +12,8 @@ export default {
     }
   }
 } as Meta;
+
+export default meta;
 
 type Story = StoryObj<AvatarProps>;
 

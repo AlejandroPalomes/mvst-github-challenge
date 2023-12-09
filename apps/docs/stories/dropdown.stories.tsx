@@ -1,7 +1,8 @@
+import React from 'react';
 import { Dropdown, type DropdownType } from '@mvst/ui';
 import type { Meta, StoryObj } from '@storybook/react';
 
-export default {
+const meta: Meta<typeof Dropdown> = {
   title: 'Components/Dropdown',
   component: Dropdown,
   argTypes: {
@@ -9,9 +10,10 @@ export default {
       control: { type: "radio" },
       options: ["searcher", "static"],
     },
-  },
-  // decorators: [(Story) => <div style={{ width: '300px' }}><Story/></div>]
-} as Meta;
+  }
+};
+
+export default meta;
 
 type Story = StoryObj<DropdownType>;
 
