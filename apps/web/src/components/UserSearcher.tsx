@@ -5,7 +5,7 @@ import { API } from '../lib/API.ts';
 import { useRouter } from '../hooks/router/useRouter.tsx';
 import { Public } from '../router/routes/Public.ts';
 import { UserCard } from './UserCard.tsx';
-import { useGetDebounced } from '../hooks/api/useGetDebouced.tsx';
+import { useGetDebounced } from '../hooks/api/useGetDebounced.tsx';
 
 export interface UserSearcherProps {
 }

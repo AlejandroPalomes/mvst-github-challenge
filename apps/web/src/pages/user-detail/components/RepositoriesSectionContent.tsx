@@ -3,7 +3,7 @@ import { Repository } from '../../../models/Repository.ts';
 import { RepositoryCard } from './RepositoryCard.tsx';
 import { API } from '../../../lib/API.ts';
 import { RepositoriesSectionContentSkeleton } from './skeletons/RepositoriesSectionContent.skeleton.tsx';
-import { useGetDebounced } from '../../../hooks/api/useGetDebouced.tsx';
+import { useGetDebounced } from '../../../hooks/api/useGetDebounced.tsx';
 
 interface RepositoriesSectionContentProps {
   username: string;

@@ -1,6 +1,6 @@
-import { renderHook } from '@testing-library/react-hooks';
 import { useDebounce } from '../useDebounce.ts';
 import { sleep } from '../../../utils/testing/testHelper.tsx';
+import { renderHook } from '@testing-library/react';
 
 const CUSTOM_MS = 800;
 const DEFAULT_MS = 500;

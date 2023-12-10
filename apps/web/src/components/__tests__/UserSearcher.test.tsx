@@ -5,8 +5,8 @@ import { withProviders } from '../../utils/testing/testHelper.tsx';
 import { UserSearcher } from '../UserSearcher.tsx';
 import { APIVariables } from '../../hooks/api/useGet.tsx';
 
-vi.mock('../../hooks/api/useGetDebouced.tsx', async () => {
-  const actual = await vi.importActual("../../hooks/api/useGetDebouced.tsx");
+vi.mock('../../hooks/api/useGetDebounced.tsx', async () => {
+  const actual = await vi.importActual("../../hooks/api/useGetDebounced.tsx");
   return {
     ...actual,
     useGetDebounced: (_: never, variables: APIVariables) => ({ data: UsersMocks.filter(mock => mock.name.includes(variables.username || '')) })
