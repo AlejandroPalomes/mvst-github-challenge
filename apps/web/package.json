@@ -16,6 +16,7 @@
   "dependencies": {
     "@mvst/ui": "workspace:*",
     "axios": "1.6.2",
+    "dayjs": "^1.11.10",
     "jsdom": "23.0.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
