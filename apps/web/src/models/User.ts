@@ -6,8 +6,8 @@ export interface User {
     websiteUrl?: string;
     bio: string;
     status?: {
-      message: string;
-      emoji: string;
+      message?: string;
+      emoji?: string;
     };
     location?: string;
     company?: string;
