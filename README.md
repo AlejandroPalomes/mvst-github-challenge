@@ -65,6 +65,8 @@ That's all you need to do. Now you are good to go! 🤘
 - `pnpm build` - Build all packages, including the Storybook site
 - `pnpm dev` - Run all packages locally and preview with Storybook
 - `pnpm test` - Run test suite
+- `pnpm test:coverage` - Run test suite and generates coverage report
+- `pnpm test:watch` - Run test suite in watch mode
 
 
 
