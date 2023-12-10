@@ -10,7 +10,7 @@ export interface UseGetResult<T> {
 
 interface GithubResponse {}
 
-interface APIVariables {
+export interface APIVariables {
   username?: string;
   repoName?: string;
   language?: string;

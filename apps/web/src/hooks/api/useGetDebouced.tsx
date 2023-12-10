@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useGet } from './useGet.tsx';
+import { APIVariables, useGet } from './useGet.tsx';
 import { useDebounce } from '../helpers/useDebounce.ts';
 
 export interface UseGetResult<T> {
@@ -10,19 +10,13 @@ export interface UseGetResult<T> {
 
 interface GithubResponse {}
 
-interface VariablesI {
-  username?: string;
-  repoName?: string;
-  language?: string;
-}
-
 /**
  * Debounced version of useGet (500ms debounce)
  * @param api - Function to call GitHub API. Must be from API.ts file
  * @param variables - Search params
  * @returns Response from GitHubAPI v4
  */
-export const useGetDebounced = <T extends GithubResponse>(api: any, variables: VariablesI = {}): UseGetResult<T> => {
+export const useGetDebounced = <T extends GithubResponse>(api: any, variables: APIVariables = {}): UseGetResult<T> => {
   const { repoName: repoNameOriginal, username: usernameOriginal, language: languageOriginal } = variables;
 
   const [repoName, setRepoName] = useState<string | undefined>(repoNameOriginal);
