@@ -3,7 +3,7 @@ import { UserCard } from "../UserCard.tsx";
 import { UsersMocks } from '../../__mocks__/Users.mocks.ts';
 
 import { User } from '../../models/User.ts';
-import { withProviders } from '../../utils/testing/renderHelper.tsx';
+import { withProviders } from '../../utils/testing/testHelper.tsx';
 
 class Setup {
   private user: User;

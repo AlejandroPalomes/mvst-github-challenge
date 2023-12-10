@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { UsersMocks } from '../../__mocks__/Users.mocks.ts';
 
-import { withProviders } from '../../utils/testing/renderHelper.tsx';
+import { withProviders } from '../../utils/testing/testHelper.tsx';
 import { UserSearcher } from '../UserSearcher.tsx';
 import { APIVariables } from '../../hooks/api/useGet.tsx';
 
