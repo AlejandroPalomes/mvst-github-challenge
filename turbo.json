@@ -20,6 +20,8 @@
     "test": {},
     "test:watch": {
       "cache": false
-    }
+    },
+    "test:update": {},
+    "test:coverage": {}
   }
 }

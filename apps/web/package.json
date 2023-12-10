@@ -9,7 +9,9 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:update": "vitest run -u",
+    "test:coverage": "vitest run --coverage"
   },
   "dependencies": {
     "@mvst/ui": "workspace:*",
@@ -34,6 +36,7 @@
     "@typescript-eslint/eslint-plugin": "6.10.0",
     "@typescript-eslint/parser": "6.10.0",
     "@vitejs/plugin-react": "4.2.0",
+    "@vitest/coverage-istanbul": "1.0.4",
     "autoprefixer": "10.4.16",
     "eslint": "8.53.0",
     "eslint-plugin-react-hooks": "4.6.0",

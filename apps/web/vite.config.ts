@@ -13,6 +13,9 @@ export default defineConfig({
     port: 3000,
   },
   test: {
+    coverage: {
+      provider: 'istanbul'
+    },
     setupFiles: './vitest.setup.ts',
     globals: true,
     environment: 'jsdom',
@@ -24,6 +27,5 @@ export default defineConfig({
     exclude: [
       'node_modules/**'
     ]
-  },
-  
+  }
 })

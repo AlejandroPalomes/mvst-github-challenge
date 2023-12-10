@@ -1,0 +1,783 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`UserCard test > should match snapshot with a complete user 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <div
+          class="flex flex-row gap-4"
+        >
+          <div
+            class="flex flex-row gap-4 md:w-2/5 w-full items-center"
+          >
+            <div
+              class="flex flex-col sm:flex-row h-10 items-center"
+            >
+              <img
+                alt="Avatar"
+                class="rounded-full w-10 h-10"
+                src="https://i.pravatar.cc/150?img=5"
+              />
+            </div>
+            <div
+              class="flex flex-col gap-3 sm:gap-2"
+            >
+              <div
+                class="flex flex-col sm:flex-row gap-1 sm:gap-2 sm:items-center items-start h-min"
+              >
+                <span
+                  class="font-bold text-base leading-4"
+                >
+                  John Doe
+                </span>
+                <span
+                  class="text-sm sm:text-base leading-4 text-gray-400"
+                >
+                  JohnDoe
+                </span>
+              </div>
+              <div
+                class="hidden lg:block"
+              >
+                <div
+                  class="flex flex-row gap-3 items-center justify-items-center"
+                >
+                  <div
+                    class="flex flex-row gap-1"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 20 20"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.7624 7.63206C11.7624 8.60554 10.9733 9.3947 9.99981 9.3947C9.02633 9.3947 8.23717 8.60554 8.23717 7.63206C8.23717 6.65858 9.02633 5.86942 9.99981 5.86942C10.9733 5.86942 11.7624 6.65858 11.7624 7.63206Z"
+                        stroke="rgb(156 163 175)"
+                        stroke-width="2"
+                      />
+                      <path
+                        d="M9.9998 2.80981C8.30949 2.80981 6.79838 3.68728 5.80511 5.06004C4.22682 7.24135 5.31186 10.141 6.68661 12.456L9.24202 16.7591C9.58354 17.3342 10.4161 17.3342 10.7576 16.7591L13.313 12.456C14.6877 10.141 15.7728 7.24135 14.1945 5.06004C13.2012 3.68728 11.6901 2.80981 9.9998 2.80981Z"
+                        stroke="rgb(156 163 175)"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    <p
+                      class="text-xs text-left text-gray-400"
+                    >
+                      Barcelona
+                    </p>
+                  </div>
+                  <span
+                    class="text-xs text-gray-400"
+                  >
+                    ·
+                  </span>
+                  <div
+                    class="flex flex-row gap-1"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                        stroke="rgb(156 163 175)"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    <p
+                      class="text-xs text-left text-gray-400"
+                    >
+                      2
+                    </p>
+                  </div>
+                  <span
+                    class="text-xs text-gray-400"
+                  >
+                    ·
+                  </span>
+                  <div
+                    class="flex flex-row gap-1"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14.4744 7.54607V4.57677C14.4744 4.03014 14.0312 3.58701 13.4846 3.58701H4.57668C4.03005 3.58701 3.58691 4.03014 3.58691 4.57677V19.4233C3.58691 19.9699 4.03005 20.413 4.57668 20.413H14.4744V18.4335M12.4948 10.5154V11.5051M12.4948 14.4744V15.4642M16.4539 10.5154V11.5051M16.4539 14.4744V15.4642M8.53575 20.413H19.4232C19.9698 20.413 20.413 19.9699 20.413 19.4233V8.53584C20.413 7.98921 19.9698 7.54607 19.4232 7.54607H9.52552C8.97888 7.54607 8.53575 7.98921 8.53575 8.53584V20.413Z"
+                        stroke="rgb(156 163 175)"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    <p
+                      class="text-xs text-left text-gray-400"
+                    >
+                      Unknown Company
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="hidden lg:block text-sm text-center sm:text-left w-3/5"
+          >
+            Nice anonymous user
+          </span>
+          <div
+            class="hidden md:flex lg:hidden items-center min-h-max w-3/5"
+          >
+            <div
+              class="flex flex-row gap-3 items-center justify-items-center"
+            >
+              <div
+                class="flex flex-row gap-1"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 20 20"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.7624 7.63206C11.7624 8.60554 10.9733 9.3947 9.99981 9.3947C9.02633 9.3947 8.23717 8.60554 8.23717 7.63206C8.23717 6.65858 9.02633 5.86942 9.99981 5.86942C10.9733 5.86942 11.7624 6.65858 11.7624 7.63206Z"
+                    stroke="rgb(156 163 175)"
+                    stroke-width="2"
+                  />
+                  <path
+                    d="M9.9998 2.80981C8.30949 2.80981 6.79838 3.68728 5.80511 5.06004C4.22682 7.24135 5.31186 10.141 6.68661 12.456L9.24202 16.7591C9.58354 17.3342 10.4161 17.3342 10.7576 16.7591L13.313 12.456C14.6877 10.141 15.7728 7.24135 14.1945 5.06004C13.2012 3.68728 11.6901 2.80981 9.9998 2.80981Z"
+                    stroke="rgb(156 163 175)"
+                    stroke-width="2"
+                  />
+                </svg>
+                <p
+                  class="text-xs text-left text-gray-400"
+                >
+                  Barcelona
+                </p>
+              </div>
+              <span
+                class="text-xs text-gray-400"
+              >
+                ·
+              </span>
+              <div
+                class="flex flex-row gap-1"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                    stroke="rgb(156 163 175)"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                  />
+                </svg>
+                <p
+                  class="text-xs text-left text-gray-400"
+                >
+                  2
+                </p>
+              </div>
+              <span
+                class="text-xs text-gray-400"
+              >
+                ·
+              </span>
+              <div
+                class="flex flex-row gap-1"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.4744 7.54607V4.57677C14.4744 4.03014 14.0312 3.58701 13.4846 3.58701H4.57668C4.03005 3.58701 3.58691 4.03014 3.58691 4.57677V19.4233C3.58691 19.9699 4.03005 20.413 4.57668 20.413H14.4744V18.4335M12.4948 10.5154V11.5051M12.4948 14.4744V15.4642M16.4539 10.5154V11.5051M16.4539 14.4744V15.4642M8.53575 20.413H19.4232C19.9698 20.413 20.413 19.9699 20.413 19.4233V8.53584C20.413 7.98921 19.9698 7.54607 19.4232 7.54607H9.52552C8.97888 7.54607 8.53575 7.98921 8.53575 8.53584V20.413Z"
+                    stroke="rgb(156 163 175)"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                  />
+                </svg>
+                <p
+                  class="text-xs text-left text-gray-400"
+                >
+                  Unknown Company
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <div
+        class="flex flex-row gap-4"
+      >
+        <div
+          class="flex flex-row gap-4 md:w-2/5 w-full items-center"
+        >
+          <div
+            class="flex flex-col sm:flex-row h-10 items-center"
+          >
+            <img
+              alt="Avatar"
+              class="rounded-full w-10 h-10"
+              src="https://i.pravatar.cc/150?img=5"
+            />
+          </div>
+          <div
+            class="flex flex-col gap-3 sm:gap-2"
+          >
+            <div
+              class="flex flex-col sm:flex-row gap-1 sm:gap-2 sm:items-center items-start h-min"
+            >
+              <span
+                class="font-bold text-base leading-4"
+              >
+                John Doe
+              </span>
+              <span
+                class="text-sm sm:text-base leading-4 text-gray-400"
+              >
+                JohnDoe
+              </span>
+            </div>
+            <div
+              class="hidden lg:block"
+            >
+              <div
+                class="flex flex-row gap-3 items-center justify-items-center"
+              >
+                <div
+                  class="flex flex-row gap-1"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 20 20"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.7624 7.63206C11.7624 8.60554 10.9733 9.3947 9.99981 9.3947C9.02633 9.3947 8.23717 8.60554 8.23717 7.63206C8.23717 6.65858 9.02633 5.86942 9.99981 5.86942C10.9733 5.86942 11.7624 6.65858 11.7624 7.63206Z"
+                      stroke="rgb(156 163 175)"
+                      stroke-width="2"
+                    />
+                    <path
+                      d="M9.9998 2.80981C8.30949 2.80981 6.79838 3.68728 5.80511 5.06004C4.22682 7.24135 5.31186 10.141 6.68661 12.456L9.24202 16.7591C9.58354 17.3342 10.4161 17.3342 10.7576 16.7591L13.313 12.456C14.6877 10.141 15.7728 7.24135 14.1945 5.06004C13.2012 3.68728 11.6901 2.80981 9.9998 2.80981Z"
+                      stroke="rgb(156 163 175)"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  <p
+                    class="text-xs text-left text-gray-400"
+                  >
+                    Barcelona
+                  </p>
+                </div>
+                <span
+                  class="text-xs text-gray-400"
+                >
+                  ·
+                </span>
+                <div
+                  class="flex flex-row gap-1"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                      stroke="rgb(156 163 175)"
+                      stroke-linecap="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  <p
+                    class="text-xs text-left text-gray-400"
+                  >
+                    2
+                  </p>
+                </div>
+                <span
+                  class="text-xs text-gray-400"
+                >
+                  ·
+                </span>
+                <div
+                  class="flex flex-row gap-1"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M14.4744 7.54607V4.57677C14.4744 4.03014 14.0312 3.58701 13.4846 3.58701H4.57668C4.03005 3.58701 3.58691 4.03014 3.58691 4.57677V19.4233C3.58691 19.9699 4.03005 20.413 4.57668 20.413H14.4744V18.4335M12.4948 10.5154V11.5051M12.4948 14.4744V15.4642M16.4539 10.5154V11.5051M16.4539 14.4744V15.4642M8.53575 20.413H19.4232C19.9698 20.413 20.413 19.9699 20.413 19.4233V8.53584C20.413 7.98921 19.9698 7.54607 19.4232 7.54607H9.52552C8.97888 7.54607 8.53575 7.98921 8.53575 8.53584V20.413Z"
+                      stroke="rgb(156 163 175)"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  <p
+                    class="text-xs text-left text-gray-400"
+                  >
+                    Unknown Company
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span
+          class="hidden lg:block text-sm text-center sm:text-left w-3/5"
+        >
+          Nice anonymous user
+        </span>
+        <div
+          class="hidden md:flex lg:hidden items-center min-h-max w-3/5"
+        >
+          <div
+            class="flex flex-row gap-3 items-center justify-items-center"
+          >
+            <div
+              class="flex flex-row gap-1"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 20 20"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.7624 7.63206C11.7624 8.60554 10.9733 9.3947 9.99981 9.3947C9.02633 9.3947 8.23717 8.60554 8.23717 7.63206C8.23717 6.65858 9.02633 5.86942 9.99981 5.86942C10.9733 5.86942 11.7624 6.65858 11.7624 7.63206Z"
+                  stroke="rgb(156 163 175)"
+                  stroke-width="2"
+                />
+                <path
+                  d="M9.9998 2.80981C8.30949 2.80981 6.79838 3.68728 5.80511 5.06004C4.22682 7.24135 5.31186 10.141 6.68661 12.456L9.24202 16.7591C9.58354 17.3342 10.4161 17.3342 10.7576 16.7591L13.313 12.456C14.6877 10.141 15.7728 7.24135 14.1945 5.06004C13.2012 3.68728 11.6901 2.80981 9.9998 2.80981Z"
+                  stroke="rgb(156 163 175)"
+                  stroke-width="2"
+                />
+              </svg>
+              <p
+                class="text-xs text-left text-gray-400"
+              >
+                Barcelona
+              </p>
+            </div>
+            <span
+              class="text-xs text-gray-400"
+            >
+              ·
+            </span>
+            <div
+              class="flex flex-row gap-1"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                  stroke="rgb(156 163 175)"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <p
+                class="text-xs text-left text-gray-400"
+              >
+                2
+              </p>
+            </div>
+            <span
+              class="text-xs text-gray-400"
+            >
+              ·
+            </span>
+            <div
+              class="flex flex-row gap-1"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M14.4744 7.54607V4.57677C14.4744 4.03014 14.0312 3.58701 13.4846 3.58701H4.57668C4.03005 3.58701 3.58691 4.03014 3.58691 4.57677V19.4233C3.58691 19.9699 4.03005 20.413 4.57668 20.413H14.4744V18.4335M12.4948 10.5154V11.5051M12.4948 14.4744V15.4642M16.4539 10.5154V11.5051M16.4539 14.4744V15.4642M8.53575 20.413H19.4232C19.9698 20.413 20.413 19.9699 20.413 19.4233V8.53584C20.413 7.98921 19.9698 7.54607 19.4232 7.54607H9.52552C8.97888 7.54607 8.53575 7.98921 8.53575 8.53584V20.413Z"
+                  stroke="rgb(156 163 175)"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <p
+                class="text-xs text-left text-gray-400"
+              >
+                Unknown Company
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
+
+exports[`UserCard test > should match snapshot with a user missing info 1`] = `
+{
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div>
+        <div
+          class="flex flex-row gap-4"
+        >
+          <div
+            class="flex flex-row gap-4 md:w-2/5 w-full items-center"
+          >
+            <div
+              class="flex flex-col sm:flex-row h-10 items-center"
+            >
+              <img
+                alt="Avatar"
+                class="rounded-full w-10 h-10"
+                src="https://i.pravatar.cc/150?img=5"
+              />
+            </div>
+            <div
+              class="flex flex-col gap-3 sm:gap-2"
+            >
+              <div
+                class="flex flex-col sm:flex-row gap-1 sm:gap-2 sm:items-center items-start h-min"
+              >
+                <span
+                  class="font-bold text-base leading-4"
+                >
+                  John Incompleted
+                </span>
+                <span
+                  class="text-sm sm:text-base leading-4 text-gray-400"
+                >
+                  JohnIncmpleted
+                </span>
+              </div>
+              <div
+                class="hidden lg:block"
+              >
+                <div
+                  class="flex flex-row gap-3 items-center justify-items-center"
+                >
+                  <div
+                    class="flex flex-row gap-1"
+                  >
+                    <svg
+                      fill="none"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      width="16"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                        stroke="rgb(156 163 175)"
+                        stroke-linecap="round"
+                        stroke-width="2"
+                      />
+                    </svg>
+                    <p
+                      class="text-xs text-left text-gray-400"
+                    >
+                      2
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span
+            class="hidden lg:block text-sm text-center sm:text-left w-3/5"
+          >
+            Nice anonymous user
+          </span>
+          <div
+            class="hidden md:flex lg:hidden items-center min-h-max w-3/5"
+          >
+            <div
+              class="flex flex-row gap-3 items-center justify-items-center"
+            >
+              <div
+                class="flex flex-row gap-1"
+              >
+                <svg
+                  fill="none"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  width="16"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                    stroke="rgb(156 163 175)"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                  />
+                </svg>
+                <p
+                  class="text-xs text-left text-gray-400"
+                >
+                  2
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div>
+      <div
+        class="flex flex-row gap-4"
+      >
+        <div
+          class="flex flex-row gap-4 md:w-2/5 w-full items-center"
+        >
+          <div
+            class="flex flex-col sm:flex-row h-10 items-center"
+          >
+            <img
+              alt="Avatar"
+              class="rounded-full w-10 h-10"
+              src="https://i.pravatar.cc/150?img=5"
+            />
+          </div>
+          <div
+            class="flex flex-col gap-3 sm:gap-2"
+          >
+            <div
+              class="flex flex-col sm:flex-row gap-1 sm:gap-2 sm:items-center items-start h-min"
+            >
+              <span
+                class="font-bold text-base leading-4"
+              >
+                John Incompleted
+              </span>
+              <span
+                class="text-sm sm:text-base leading-4 text-gray-400"
+              >
+                JohnIncmpleted
+              </span>
+            </div>
+            <div
+              class="hidden lg:block"
+            >
+              <div
+                class="flex flex-row gap-3 items-center justify-items-center"
+              >
+                <div
+                  class="flex flex-row gap-1"
+                >
+                  <svg
+                    fill="none"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    width="16"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                      stroke="rgb(156 163 175)"
+                      stroke-linecap="round"
+                      stroke-width="2"
+                    />
+                  </svg>
+                  <p
+                    class="text-xs text-left text-gray-400"
+                  >
+                    2
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span
+          class="hidden lg:block text-sm text-center sm:text-left w-3/5"
+        >
+          Nice anonymous user
+        </span>
+        <div
+          class="hidden md:flex lg:hidden items-center min-h-max w-3/5"
+        >
+          <div
+            class="flex flex-row gap-3 items-center justify-items-center"
+          >
+            <div
+              class="flex flex-row gap-1"
+            >
+              <svg
+                fill="none"
+                height="16"
+                viewBox="0 0 24 24"
+                width="16"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M13.0072 6.19808L11.7749 4.91872C11.2094 4.33167 10.4294 4 9.61425 4H5.5C4.39543 4 3.5 4.89543 3.5 6V8.3072M13.0072 6.19808H18.6634C19.768 6.19808 20.6634 7.09351 20.6634 8.19808V19.1858C20.6634 19.738 20.2157 20.1858 19.6634 20.1858H4.5C3.94771 20.1858 3.5 19.738 3.5 19.1858V8.3072M13.0072 6.19808L10.4359 8.10972C10.2634 8.23795 10.0542 8.3072 9.83929 8.3072H3.5"
+                  stroke="rgb(156 163 175)"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                />
+              </svg>
+              <p
+                class="text-xs text-left text-gray-400"
+              >
+                2
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
