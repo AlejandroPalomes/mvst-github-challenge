@@ -7,7 +7,10 @@
     "build": {
       "dotEnv": [".env"],
       "outputs": ["dist/**", "storybook-static/**"],
-      "dependsOn": ["^build"]
+      "dependsOn": ["^build"],
+      "env": [
+        "VITE_GITHUB_TOKEN"
+      ]
     },
     "lint": {},
     "dev": {
