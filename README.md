@@ -18,7 +18,7 @@ The task is to allow the user to type in the name of a github user and display h
 
 - ✅ Add storybook and divide the components
 - ✅ Write tests
-- ⭕️ Deploy it somewhere
+- ✅ Deploy it somewhere - [Deployed app](https://mvst-github-challenge-web.vercel.app)
 - ✅ Document [code](https://google.github.io/styleguide/jsguide.html#jsdoc)
 - ✅ Use the [v4 API](https://docs.github.com/en/graphql), which is built using GraphQL.
 - ✅ Write a README that includes
