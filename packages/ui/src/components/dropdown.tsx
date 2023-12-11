@@ -9,7 +9,7 @@ const optionsContainerStyles = 'absolute left-0 z-10 mt-2 w-full origin-top-righ
 const optionsScrollStyles = (hasLimit: boolean): string =>
   hasLimit ? 'max-h-48 overflow-y-scroll' : 'overflow-y-hidden';
 
-type DropdownVariants = 'searcher' | 'static';
+export type DropdownVariants = 'searcher' | 'static';
 
 const getHeader = (variant: DropdownVariants) => {
   switch (variant) {
