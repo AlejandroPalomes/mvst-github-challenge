@@ -2,6 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "globalDotEnv": [".env"],
   "globalDependencies": [".env"],
+  "globalEnv": ["VITE_GITHUB_TOKEN"],
   "pipeline": {
     "build": {
       "dotEnv": [".env"],
