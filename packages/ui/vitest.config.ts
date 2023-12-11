@@ -1,9 +1,8 @@
-import { defineConfig } from 'vitest/config'
-// import react from '@vitejs/plugin-react'
+import { configDefaults, defineConfig } from 'vitest/config'
 import tailwindcss from 'tailwindcss'
 
+
 export default defineConfig({
-  // plugins: [react()],
   css: {
     postcss: {
       plugins: [tailwindcss()],
@@ -11,7 +10,12 @@ export default defineConfig({
   },
   test: {
     coverage: {
-      provider: 'istanbul'
+      provider: 'istanbul',
+      exclude: [
+      ...(configDefaults.coverage.exclude || []),
+      'postcss.config.js',
+      'tailwind.config.ts'
+      ]
     },
     setupFiles: './vitest.setup.ts',
     globals: true,
@@ -22,9 +26,7 @@ export default defineConfig({
       }
     },
     exclude: [
-      'node_modules/**',
-      './postcss.config.js',
-      './tailwind.config.ts'
+      'node_modules/**'
     ]
   }
 })
