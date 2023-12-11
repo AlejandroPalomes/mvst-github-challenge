@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Avatar test > should render with the correct classes for "l" size 1`] = `
+<body>
+  <div>
+    <img
+      alt="Avatar"
+      class="rounded-full w-20 h-20"
+      src="https://i.pravatar.cc/150?img=5"
+    />
+  </div>
+</body>
+`;
+
+exports[`Avatar test > should render with the correct classes for "s" size 1`] = `
+<body>
+  <div>
+    <img
+      alt="Avatar"
+      class="rounded-full w-6 h-6"
+      src="https://i.pravatar.cc/150?img=5"
+    />
+  </div>
+</body>
+`;
+
+exports[`Avatar test > should render with the correct classes for "xl" size 1`] = `
+<body>
+  <div>
+    <img
+      alt="Avatar"
+      class="rounded-full w-32 h-32"
+      src="https://i.pravatar.cc/150?img=5"
+    />
+  </div>
+</body>
+`;

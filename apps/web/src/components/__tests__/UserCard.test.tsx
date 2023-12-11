@@ -24,6 +24,9 @@ class Setup {
   }
 
   getRender() {
+    if (!this.renderResult) {
+      throw Error('Render result not defined!');
+    } 
     return this.renderResult;
   }
 }
@@ -40,13 +43,13 @@ describe('UserCard test', () => {
   });
 
   it('should match snapshot with a complete user', () => {
-    const renderResult = new Setup().render().getRender();
-    expect(renderResult).toMatchSnapshot();
+    const { baseElement } = new Setup().render().getRender();
+    expect(baseElement).toMatchSnapshot();
   });
   
   it('should match snapshot with a user missing info', () => {
-    const renderResult = new Setup().withIncompleteUser().render().getRender();
-    expect(renderResult).toMatchSnapshot();
+    const { baseElement } = new Setup().withIncompleteUser().render().getRender();
+    expect(baseElement).toMatchSnapshot();
   });
   
   it('should navigate to user detail page on click', () => {
