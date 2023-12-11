@@ -1,6 +1,6 @@
 {
   "extends": "@repo/typescript-config/react-app.json",
-  "include": ["stories"],
+  "include": ["stories", "./tailwind.config.ts"],
   "compilerOptions": {
     "jsx": "preserve"
   },

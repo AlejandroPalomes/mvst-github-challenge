@@ -21,7 +21,6 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
     "@testing-library/dom": "9.3.3",
     "@testing-library/jest-dom": "6.1.5",

@@ -77,7 +77,6 @@ This Turborepo includes the following packages and applications:
 - `apps/docs`: Component documentation site with Storybook
 - `apps/web`: Web Application - GitHub Searcher
 - `packages/ui`: Core React components
-- `packages/tailwind-config`: Shared `tailwind.config.ts`s used throughout the Turborepo
 - `packages/typescript-config`: Shared `tsconfig.json`s used throughout the Turborepo
 - `packages/eslint-config`: ESLint preset
 
